@@ -11,7 +11,7 @@ This repository stores TuteDude Python assignment PDFs, implementation folders, 
 - Remote: `https://github.com/MrLluminati/TuteDude-Assignments-Python.git`
 - Default branch: `main`
 - Visibility: private
-- Assignment 1 has working scripts.
+- Assignments 1 and 2 have working scripts.
 - All provided source PDFs are stored in `resources/source_pdfs/`.
 - Remaining provided assignments are scaffolded with README files and notebook notes.
 
@@ -36,7 +36,7 @@ This repository stores TuteDude Python assignment PDFs, implementation folders, 
 
 ## Safe Next Actions
 
-- Implement assignments one at a time, starting with Assignment 2 unless the user chooses another.
+- Implement assignments one at a time, starting with Assignment 3 unless the user chooses another.
 - After implementation, run the relevant script or project locally.
 - Update the assignment README and notebook with validation notes.
 - Commit and push changes to `main` when the user asks for GitHub sync.

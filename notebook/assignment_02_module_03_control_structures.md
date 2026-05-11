@@ -15,9 +15,10 @@ Conditional logic with `if-else` and loop-based accumulation using `for`.
 
 - [x] Source PDF captured.
 - [x] Folder and README scaffolded.
-- [ ] Task scripts pending.
-- [ ] Local validation pending.
+- [x] Task 1 implemented with integer input validation and `if-else` parity logic.
+- [x] Task 2 implemented with a `for` loop over `range(1, 51)`.
+- [x] Local validation completed with even, odd, invalid input retry, and sum output checks.
 
 ## Next Learning Step
 
-Implement `task_1_even_or_odd.py` and `task_2_sum_1_to_50.py`.
+Package this folder as a ZIP when it is time to submit Assignment 2.

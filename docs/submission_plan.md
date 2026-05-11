@@ -19,8 +19,8 @@ Use this plan each time an assignment is implemented and prepared for upload.
 | Order | Workspace | Main Work |
 | ---: | --- | --- |
 | 1 | `assignment_01_module_02_basic_python_concepts` | Already implemented; package and submit when needed. |
-| 2 | `assignment_02_module_03_control_structures` | Implement even/odd check and sum from 1 to 50. |
-| 3 | `assignment_03_module_04_functions_modules` | Implement factorial function and math module calculations. |
+| 2 | `assignment_02_module_03_control_structures` | Implemented; package and submit when needed. |
+| 3 | `assignment_03_module_04_functions_modules` | Next implementation target: factorial function and math module calculations. |
 | 4 | `assignment_04_module_05_files_exceptions_errors` | Implement file read error handling and write/append/read flow. |
 | 5 | `assignment_05_module_06_data_structures_strings` | Implement student marks dictionary and list slicing. |
 | 6 | `assignment_06_module_14_15_tkinter_calculator` | Build calculator GUI using Tkinter. |

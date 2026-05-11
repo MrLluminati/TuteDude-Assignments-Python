@@ -5,7 +5,7 @@ This index uses the assignment number and module title printed inside each PDF. 
 | Workspace | Assignment | Module | Source PDF | Status |
 | --- | ---: | --- | --- | --- |
 | `assignment_01_module_02_basic_python_concepts` | 1 | Module 2: Basic Python Concepts | `ASSIGNMENT 1_ Basic Python Concepts.pdf` | Scripts complete |
-| `assignment_02_module_03_control_structures` | 2 | Module 3: Control Structures in Python | `ASSIGNMENT 2_ Control Structures in Python.pdf` | Scaffolded |
+| `assignment_02_module_03_control_structures` | 2 | Module 3: Control Structures in Python | `ASSIGNMENT 2_ Control Structures in Python.pdf` | Scripts complete |
 | `assignment_03_module_04_functions_modules` | 3 | Module 4: Functions & Modules in Python | `ASSIGNMENT 3_ Functions & Modules in Python.pdf` | Scaffolded |
 | `assignment_04_module_05_files_exceptions_errors` | 4 | Module 5: Files, Exceptions, and Errors in Python | `ASSIGNMENT 4_ Files, Exceptions, and Errors in Python.pdf` | Scaffolded |
 | `assignment_05_module_06_data_structures_strings` | 5 | Module 6: Data Structures and Strings in Python | `ASSIGNMENT 5_ Data Structures and Strings in Python.pdf` | Scaffolded |

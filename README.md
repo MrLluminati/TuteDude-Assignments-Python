@@ -4,9 +4,9 @@ This repository tracks Python assignments, source PDFs, working folders, submiss
 
 ## Current Status
 
-- Assignment 1 has working Python scripts.
+- Assignments 1 and 2 have working Python scripts.
 - All provided assignment PDFs have been copied into `resources/source_pdfs/`.
-- Assignments after Assignment 1 are scaffolded for future implementation and submission work.
+- Assignments after Assignment 2 are scaffolded for future implementation and submission work.
 - Folder names use the assignment number and module number printed inside each PDF, not the downloaded filename.
 
 ## Repository Structure
