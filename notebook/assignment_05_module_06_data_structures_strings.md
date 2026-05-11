@@ -15,9 +15,11 @@ Dictionaries, lookup behavior, list slicing, list reversal, and clean output for
 
 - [x] Source PDF captured.
 - [x] Folder and README scaffolded.
-- [ ] Task scripts pending.
-- [ ] Local validation pending.
+- [x] Compatible module note captured from the ZIP resource pack.
+- [x] Task 1 implemented with a student marks dictionary and case-insensitive lookup.
+- [x] Task 2 implemented with list slicing and reversed slicing.
+- [x] Local validation completed with found, not-found, empty input, slicing, and syntax checks.
 
 ## Next Learning Step
 
-Implement `task_1_student_marks.py`, then `task_2_list_slicing.py`.
+Package this folder as a ZIP when it is time to submit Assignment 5.
