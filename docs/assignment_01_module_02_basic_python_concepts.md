@@ -5,7 +5,7 @@
 Original assignment file:
 
 ```text
-resources/ASSIGNMENT 1_ Basic Python Concepts.pdf
+resources/source_pdfs/ASSIGNMENT 1_ Basic Python Concepts.pdf
 ```
 
 ## Module
@@ -25,7 +25,7 @@ Create a Python program that:
 Implemented in:
 
 ```text
-assignments/assignment_01_basic_python_concepts/task_1_basic_math_operations.py
+assignments/assignment_01_module_02_basic_python_concepts/task_1_basic_math_operations.py
 ```
 
 ### Task 2: Create a Personalized Greeting
@@ -39,7 +39,7 @@ Create a Python program that:
 Implemented in:
 
 ```text
-assignments/assignment_01_basic_python_concepts/task_2_personalized_greeting.py
+assignments/assignment_01_module_02_basic_python_concepts/task_2_personalized_greeting.py
 ```
 
 ## Submission Folder
@@ -47,7 +47,7 @@ assignments/assignment_01_basic_python_concepts/task_2_personalized_greeting.py
 The assignment scripts are kept together in:
 
 ```text
-assignments/assignment_01_basic_python_concepts/
+assignments/assignment_01_module_02_basic_python_concepts/
 ```
 
 This folder can be zipped for assignment submission.
