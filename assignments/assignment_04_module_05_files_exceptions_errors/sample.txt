@@ -1,0 +1,3 @@
+Python file handling makes programs persistent.
+Exceptions help programs respond gracefully to problems.
+This sample file is used for Assignment 4 Task 1.

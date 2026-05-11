@@ -21,8 +21,8 @@ Use this plan each time an assignment is implemented and prepared for upload.
 | 1 | `assignment_01_module_02_basic_python_concepts` | Already implemented; package and submit when needed. |
 | 2 | `assignment_02_module_03_control_structures` | Implemented; package and submit when needed. |
 | 3 | `assignment_03_module_04_functions_modules` | Implemented; package and submit when needed. |
-| 4 | `assignment_04_module_05_files_exceptions_errors` | Next implementation target: file read error handling and write/append/read flow. |
-| 5 | `assignment_05_module_06_data_structures_strings` | Implement student marks dictionary and list slicing. |
+| 4 | `assignment_04_module_05_files_exceptions_errors` | Implemented; package and submit when needed. |
+| 5 | `assignment_05_module_06_data_structures_strings` | Next implementation target: student marks dictionary and list slicing. |
 | 6 | `assignment_06_module_14_15_tkinter_calculator` | Build calculator GUI using Tkinter. |
 | 7 | `assignment_07_module_16_postgresql_python` | Complete module practicals and capture unedited evidence. |
 | 8 | `assignment_10_module_21_web_scraping` | Complete web scraping practical files. |

@@ -15,9 +15,12 @@ File reading, file writing, appending data, and graceful exception handling.
 
 - [x] Source PDF captured.
 - [x] Folder and README scaffolded.
-- [ ] Task scripts pending.
-- [ ] Existing-file and missing-file validation pending.
+- [x] Compatible module note captured from the ZIP resource pack.
+- [x] Added `sample.txt` so the successful read case is reproducible.
+- [x] Task 1 implemented with `FileNotFoundError` handling.
+- [x] Task 2 implemented with write, append, and read-back behavior.
+- [x] Existing-file, missing-file, generated-output, and syntax validation completed.
 
 ## Next Learning Step
 
-Implement the file read script, then implement write/append/read behavior with clear terminal output.
+Package this folder as a ZIP when it is time to submit Assignment 4.
