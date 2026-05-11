@@ -9,7 +9,7 @@ This index uses the assignment number and module title printed inside each PDF. 
 | `assignment_03_module_04_functions_modules` | 3 | Module 4: Functions & Modules in Python | `ASSIGNMENT 3_ Functions & Modules in Python.pdf` | Scripts complete |
 | `assignment_04_module_05_files_exceptions_errors` | 4 | Module 5: Files, Exceptions, and Errors in Python | `ASSIGNMENT 4_ Files, Exceptions, and Errors in Python.pdf` | Scripts complete |
 | `assignment_05_module_06_data_structures_strings` | 5 | Module 6: Data Structures and Strings in Python | `ASSIGNMENT 5_ Data Structures and Strings in Python.pdf` | Scripts complete |
-| `assignment_06_module_14_15_tkinter_calculator` | 6 | Module 14 & 15: Calculator Using Tkinter | `ASSIGNMENT 1.docx.pdf` | Scaffolded |
+| `assignment_06_module_14_15_tkinter_calculator` | 6 | Module 14 & 15: Calculator Using Tkinter | `ASSIGNMENT 1.docx.pdf` | Project complete |
 | `assignment_07_module_16_postgresql_python` | 7 | Module 16: Building Database Apps with PostgreSQL & Python | `ASSIGNMENT 7.docx.pdf` | Scaffolded |
 | `assignment_10_module_21_web_scraping` | 10 | Module 21: Web Scraping Module Implementation | `ASSIGNMENT 13.docx.pdf` | Scaffolded |
 | `assignment_11_module_19_flask_registration_form` | 11 | Module 19: Flask Registration Form Project | `ASSIGNMENT 6.docx.pdf` | Scaffolded |

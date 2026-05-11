@@ -15,9 +15,12 @@ Tkinter GUI construction, event handling, calculator state management, and basic
 
 - [x] Source PDF captured.
 - [x] Folder and README scaffolded.
-- [ ] Tkinter calculator pending.
-- [ ] GUI validation pending.
+- [x] Compatible Tkinter and calculator module notes captured from the ZIP resource pack.
+- [x] Calculator GUI implemented with Tkinter buttons and display.
+- [x] Calculator behavior separated into `CalculatorState` for easier testing.
+- [x] Unit tests added for normal calculations, division by zero, clear, and backspace behavior.
+- [x] Tkinter import, app import, syntax, and unit-test validation completed.
 
 ## Next Learning Step
 
-Build a minimal calculator window, then add operator handling and error cases.
+Package this folder as a ZIP when it is time to submit Assignment 6.

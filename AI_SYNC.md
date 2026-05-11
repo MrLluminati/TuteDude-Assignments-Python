@@ -12,6 +12,7 @@ This repository stores TuteDude Python assignment PDFs, implementation folders, 
 - Default branch: `main`
 - Visibility: private
 - Assignments 1, 2, 3, 4, and 5 have working scripts.
+- Assignment 6 has a working Tkinter calculator project.
 - All provided source PDFs are stored in `resources/source_pdfs/`.
 - All provided module-note PDFs are stored in `resources/module_notes/`.
 - Remaining provided assignments are scaffolded with README files and notebook notes.
@@ -39,7 +40,7 @@ This repository stores TuteDude Python assignment PDFs, implementation folders, 
 
 ## Safe Next Actions
 
-- Implement assignments one at a time, starting with Assignment 6 unless the user chooses another.
+- Implement assignments one at a time, starting with Assignment 7 unless the user chooses another.
 - After implementation, run the relevant script or project locally.
 - Update the assignment README and notebook with validation notes.
 - Commit and push changes to `main` when the user asks for GitHub sync.

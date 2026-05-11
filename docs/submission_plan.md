@@ -23,8 +23,8 @@ Use this plan each time an assignment is implemented and prepared for upload.
 | 3 | `assignment_03_module_04_functions_modules` | Implemented; package and submit when needed. |
 | 4 | `assignment_04_module_05_files_exceptions_errors` | Implemented; package and submit when needed. |
 | 5 | `assignment_05_module_06_data_structures_strings` | Implemented; package and submit when needed. |
-| 6 | `assignment_06_module_14_15_tkinter_calculator` | Next implementation target: Tkinter calculator project. |
-| 7 | `assignment_07_module_16_postgresql_python` | Complete module practicals and capture unedited evidence. |
+| 6 | `assignment_06_module_14_15_tkinter_calculator` | Implemented; package and submit when needed. |
+| 7 | `assignment_07_module_16_postgresql_python` | Next implementation target: PostgreSQL practical pack and evidence plan. |
 | 8 | `assignment_10_module_21_web_scraping` | Complete web scraping practical files. |
 | 9 | `assignment_11_module_19_flask_registration_form` | Build Flask registration form project. |
 | 10 | `assignment_11_module_22_opencv_implementations` | Complete OpenCV practicals and capture screenshots. |
