@@ -11,8 +11,9 @@ This repository stores TuteDude Python assignment PDFs, implementation folders, 
 - Remote: `https://github.com/MrLluminati/TuteDude-Assignments-Python.git`
 - Default branch: `main`
 - Visibility: private
-- Assignments 1 and 2 have working scripts.
+- Assignments 1, 2, and 3 have working scripts.
 - All provided source PDFs are stored in `resources/source_pdfs/`.
+- All provided module-note PDFs are stored in `resources/module_notes/`.
 - Remaining provided assignments are scaffolded with README files and notebook notes.
 
 ## Important Conventions
@@ -21,6 +22,7 @@ This repository stores TuteDude Python assignment PDFs, implementation folders, 
 - Preserve original PDF filenames exactly.
 - Use folder names like `assignment_XX_module_YY_slug`.
 - For duplicate printed assignment numbers, use the module number to disambiguate.
+- Use `docs/module_notes_compatibility_map.md` to connect assignments to compatible note PDFs when course module numbers differ.
 - Keep implementation, project files, and local test assets inside the matching assignment folder.
 - Keep generated submission ZIP files out of Git unless the user explicitly asks to track them.
 - Record learning notes in `notebook/`; summarize rationale and decisions, but do not attempt to expose private chain-of-thought.
@@ -30,13 +32,14 @@ This repository stores TuteDude Python assignment PDFs, implementation folders, 
 1. `README.md`
 2. `docs/assignment_index.md`
 3. `docs/source_pdf_map.md`
-4. `docs/submission_plan.md`
-5. The target assignment folder `README.md`
-6. The target assignment notebook file
+4. `docs/module_notes_compatibility_map.md`
+5. `docs/submission_plan.md`
+6. The target assignment folder `README.md`
+7. The target assignment notebook file
 
 ## Safe Next Actions
 
-- Implement assignments one at a time, starting with Assignment 3 unless the user chooses another.
+- Implement assignments one at a time, starting with Assignment 4 unless the user chooses another.
 - After implementation, run the relevant script or project locally.
 - Update the assignment README and notebook with validation notes.
 - Commit and push changes to `main` when the user asks for GitHub sync.

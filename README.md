@@ -4,9 +4,10 @@ This repository tracks Python assignments, source PDFs, working folders, submiss
 
 ## Current Status
 
-- Assignments 1 and 2 have working Python scripts.
+- Assignments 1, 2, and 3 have working Python scripts.
 - All provided assignment PDFs have been copied into `resources/source_pdfs/`.
-- Assignments after Assignment 2 are scaffolded for future implementation and submission work.
+- All provided module-note PDFs have been copied into `resources/module_notes/`.
+- Assignments after Assignment 3 are scaffolded for future implementation and submission work.
 - Folder names use the assignment number and module number printed inside each PDF, not the downloaded filename.
 
 ## Repository Structure
@@ -30,11 +31,13 @@ Python/
 │   └── assignment_13_module_26_socket_chat_application/
 ├── docs/
 │   ├── assignment_index.md
+│   ├── module_notes_compatibility_map.md
 │   ├── repo_workflow.md
 │   ├── source_pdf_map.md
 │   └── submission_plan.md
 ├── notebook/
 └── resources/
+    ├── module_notes/
     └── source_pdfs/
 ```
 
@@ -44,12 +47,14 @@ Python/
 2. Open the matching assignment folder under `assignments/`.
 3. Read that folder's `README.md`.
 4. Use the matching source PDF from `resources/source_pdfs/` as the authority.
-5. Record implementation choices and learning notes in `notebook/`.
+5. Use `docs/module_notes_compatibility_map.md` to find supporting module notes.
+6. Record implementation choices and learning notes in `notebook/`.
 
 ## Important Conventions
 
 - Preserve original PDF filenames for traceability.
 - Use `assignment_XX_module_YY_slug` folder names for assignment workspaces.
+- Use `docs/module_notes_compatibility_map.md` to match assignments to compatible module notes.
 - Keep implementation files inside the matching assignment folder.
 - Keep generated submission ZIP files out of Git unless explicitly requested.
 - Update `AI_SYNC.md` when repo conventions or status changes.

@@ -15,9 +15,11 @@ Reusable functions and importing Python's standard `math` module.
 
 - [x] Source PDF captured.
 - [x] Folder and README scaffolded.
-- [ ] Task scripts pending.
-- [ ] Local validation pending.
+- [x] Compatible module note captured from the ZIP resource pack.
+- [x] Task 1 implemented with a named `factorial` function and loop-based multiplication.
+- [x] Task 2 implemented with `math.sqrt`, `math.log`, and `math.sin`.
+- [x] Local validation completed with factorial, math, invalid input, and syntax checks.
 
 ## Next Learning Step
 
-Implement the factorial script first, then the math module script with positive-number validation.
+Package this folder as a ZIP when it is time to submit Assignment 3.

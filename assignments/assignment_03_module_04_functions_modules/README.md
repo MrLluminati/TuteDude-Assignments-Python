@@ -8,20 +8,33 @@ Source PDF:
 
 ## Status
 
-Scaffolded. Implementation pending.
+Implemented.
 
 ## Required Tasks
 
-| Task | Planned File | Requirement |
+| Task | File | Requirement |
 | --- | --- | --- |
 | Task 1 | `task_1_factorial.py` | Define a `factorial` function, call it with a sample number, and print the result. |
 | Task 2 | `task_2_math_module_calculations.py` | Use the `math` module to calculate square root, natural logarithm, and sine for user input. |
 
+## Compatible Module Note
+
+```text
+../../resources/module_notes/Module 4_Functions & Modules In Python-1.pdf
+```
+
+## Run
+
+```powershell
+python .\task_1_factorial.py
+python .\task_2_math_module_calculations.py
+```
+
 ## Submission Checklist
 
-- [ ] Implement Task 1.
-- [ ] Implement Task 2.
-- [ ] Validate edge cases such as negative input where relevant.
-- [ ] Run both scripts locally.
+- [x] Implement Task 1.
+- [x] Implement Task 2.
+- [x] Validate edge cases such as negative input where relevant.
+- [x] Run both scripts locally.
 - [ ] Create ZIP from this folder.
 - [ ] Confirm ZIP opens and contains both scripts.
