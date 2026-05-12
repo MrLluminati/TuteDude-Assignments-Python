@@ -1,15 +1,11 @@
-"""PostgreSQL CRUD practical for Assignment 7.
-
-The script demonstrates how to connect Python with PostgreSQL and perform
-Create, Read, Update, and Delete operations on a students table.
-"""
+"""PostgreSQL CRUD practical for Assignment 7."""
 
 from __future__ import annotations
 
 from typing import Iterable
 
-import psycopg2
-from psycopg2.extras import RealDictCursor
+import psycopg
+from psycopg.rows import dict_row
 
 from db_config import get_database_config
 
@@ -21,10 +17,9 @@ class StudentRepository:
         self.config = get_database_config()
 
     def _connect(self):
-        return psycopg2.connect(**self.config.as_dsn_kwargs())
+        return psycopg.connect(**self.config.as_dsn_kwargs())
 
     def add_student(self, name: str, email: str, course: str, marks: int) -> int:
-        """Insert a student record and return the generated student ID."""
         query = """
             INSERT INTO students (name, email, course, marks)
             VALUES (%s, %s, %s, %s)
@@ -33,48 +28,38 @@ class StudentRepository:
         with self._connect() as connection:
             with connection.cursor() as cursor:
                 cursor.execute(query, (name, email, course, marks))
-                student_id = cursor.fetchone()[0]
-        return student_id
+                return cursor.fetchone()[0]
 
     def fetch_all_students(self) -> list[dict[str, object]]:
-        """Return all student records ordered by student ID."""
         query = """
             SELECT student_id, name, email, course, marks, created_at
             FROM students
             ORDER BY student_id;
         """
         with self._connect() as connection:
-            with connection.cursor(cursor_factory=RealDictCursor) as cursor:
+            with connection.cursor(row_factory=dict_row) as cursor:
                 cursor.execute(query)
-                return [dict(row) for row in cursor.fetchall()]
+                return list(cursor.fetchall())
 
     def fetch_student_by_id(self, student_id: int) -> dict[str, object] | None:
-        """Return one student record by ID, or None if no record exists."""
         query = """
             SELECT student_id, name, email, course, marks, created_at
             FROM students
             WHERE student_id = %s;
         """
         with self._connect() as connection:
-            with connection.cursor(cursor_factory=RealDictCursor) as cursor:
+            with connection.cursor(row_factory=dict_row) as cursor:
                 cursor.execute(query, (student_id,))
-                row = cursor.fetchone()
-                return dict(row) if row else None
+                return cursor.fetchone()
 
     def update_marks(self, student_id: int, marks: int) -> bool:
-        """Update marks for a student and return True if a row was updated."""
-        query = """
-            UPDATE students
-            SET marks = %s
-            WHERE student_id = %s;
-        """
+        query = "UPDATE students SET marks = %s WHERE student_id = %s;"
         with self._connect() as connection:
             with connection.cursor() as cursor:
                 cursor.execute(query, (marks, student_id))
                 return cursor.rowcount > 0
 
     def delete_student(self, student_id: int) -> bool:
-        """Delete a student and return True if a row was deleted."""
         query = "DELETE FROM students WHERE student_id = %s;"
         with self._connect() as connection:
             with connection.cursor() as cursor:
@@ -83,7 +68,6 @@ class StudentRepository:
 
 
 def print_students(students: Iterable[dict[str, object]]) -> None:
-    """Print student records in a readable terminal format."""
     students = list(students)
     if not students:
         print("No student records found.")
@@ -103,7 +87,6 @@ def print_students(students: Iterable[dict[str, object]]) -> None:
 
 
 def run_demo() -> None:
-    """Run a simple demonstration of CRUD operations."""
     repository = StudentRepository()
 
     print("Adding sample students...")
