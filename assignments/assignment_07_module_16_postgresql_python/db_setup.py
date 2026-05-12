@@ -2,8 +2,7 @@
 
 from __future__ import annotations
 
-import psycopg2
-from psycopg2 import sql
+import psycopg
 
 from db_config import get_database_config
 
@@ -24,7 +23,7 @@ def create_students_table() -> None:
     """Create the students table if it does not already exist."""
     config = get_database_config()
 
-    with psycopg2.connect(**config.as_dsn_kwargs()) as connection:
+    with psycopg.connect(**config.as_dsn_kwargs()) as connection:
         with connection.cursor() as cursor:
             cursor.execute(CREATE_STUDENTS_TABLE)
 
