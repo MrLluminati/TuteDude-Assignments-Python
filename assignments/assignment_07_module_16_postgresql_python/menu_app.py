@@ -2,7 +2,7 @@
 
 from __future__ import annotations
 
-from psycopg2 import Error
+from psycopg import Error
 
 from db_setup import create_students_table
 from student_crud import StudentRepository, print_students
@@ -25,7 +25,6 @@ def read_int(prompt: str, minimum: int | None = None, maximum: int | None = None
 
 
 def add_student(repository: StudentRepository) -> None:
-    """Collect user input and insert a student record."""
     name = input("Enter student name: ").strip()
     email = input("Enter student email: ").strip()
     course = input("Enter course name: ").strip()
@@ -40,7 +39,6 @@ def add_student(repository: StudentRepository) -> None:
 
 
 def view_student(repository: StudentRepository) -> None:
-    """Display one student by ID."""
     student_id = read_int("Enter student ID: ", 1)
     student = repository.fetch_student_by_id(student_id)
     if student is None:
@@ -50,7 +48,6 @@ def view_student(repository: StudentRepository) -> None:
 
 
 def update_student_marks(repository: StudentRepository) -> None:
-    """Update marks for one student."""
     student_id = read_int("Enter student ID: ", 1)
     marks = read_int("Enter new marks between 0 and 100: ", 0, 100)
     if repository.update_marks(student_id, marks):
@@ -60,7 +57,6 @@ def update_student_marks(repository: StudentRepository) -> None:
 
 
 def delete_student(repository: StudentRepository) -> None:
-    """Delete one student by ID."""
     student_id = read_int("Enter student ID to delete: ", 1)
     if repository.delete_student(student_id):
         print("Student deleted successfully.")
@@ -69,7 +65,6 @@ def delete_student(repository: StudentRepository) -> None:
 
 
 def main() -> None:
-    """Run the menu-driven PostgreSQL application."""
     try:
         create_students_table()
         repository = StudentRepository()
