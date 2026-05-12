@@ -24,15 +24,17 @@ class DatabaseConfig:
     password: str
     host: str = "localhost"
     port: int = 5432
+    connect_timeout: int = 5
 
     def as_dsn_kwargs(self) -> dict[str, object]:
-        """Return values in the keyword format expected by psycopg2.connect."""
+        """Return values in the keyword format expected by psycopg.connect."""
         return {
             "dbname": self.dbname,
             "user": self.user,
             "password": self.password,
             "host": self.host,
             "port": self.port,
+            "connect_timeout": self.connect_timeout,
         }
 
 
@@ -44,4 +46,5 @@ def get_database_config() -> DatabaseConfig:
         password=os.getenv("DB_PASSWORD", ""),
         host=os.getenv("DB_HOST", "localhost"),
         port=int(os.getenv("DB_PORT", "5432")),
+        connect_timeout=int(os.getenv("DB_CONNECT_TIMEOUT", "5")),
     )
