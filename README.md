@@ -25,7 +25,7 @@ Python/
 │   ├── assignment_06_module_14_15_tkinter_calculator/
 │   ├── assignment_07_module_16_postgresql_python/
 │   ├── assignment_10_module_21_web_scraping/
-│   ├── assignment_11_module_19_flask_registration_form/
+│   ├── assignment_08_module_19_flask_registration_form/
 │   ├── assignment_11_module_22_opencv_implementations/
 │   ├── assignment_12_module_20_django_rest_api/
 │   ├── assignment_12_module_23_selenium_getting_data/

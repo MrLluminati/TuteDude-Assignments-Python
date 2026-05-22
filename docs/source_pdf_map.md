@@ -12,7 +12,7 @@ The repository keeps original PDF filenames unchanged for traceability. The extr
 | `ASSIGNMENT 1.docx.pdf` | 6 | Module 14 & 15: Calculator Using Tkinter | `assignment_06_module_14_15_tkinter_calculator` |
 | `ASSIGNMENT 7.docx.pdf` | 7 | Module 16: Building Database Apps with PostgreSQL & Python | `assignment_07_module_16_postgresql_python` |
 | `ASSIGNMENT 13.docx.pdf` | 10 | Module 21: Web Scraping Module Implementation | `assignment_10_module_21_web_scraping` |
-| `ASSIGNMENT 6.docx.pdf` | 11 | Module 19: Flask Registration Form Project | `assignment_11_module_19_flask_registration_form` |
+| `PORTAL_ASSIGNMENT_08_PRINTED_ASSIGNMENT_11_MODULE_19_FLASK_REGISTRATION_FORM.pdf` | 8 / Printed 11 | Module 19: Flask Registration Form Project | `assignment_08_module_19_flask_registration_form` |
 | `ASSIGNMENT 14.docx.pdf` | 11 | Module 22: OpenCV Module Implementations | `assignment_11_module_22_opencv_implementations` |
 | `ASSIGNMENT 7.docx (1).pdf` | 12 | Module 20: Implementing REST API Using Django | `assignment_12_module_20_django_rest_api` |
 | `ASSIGNMENT 15.docx.pdf` | 12 | Module 23: Automation Using Selenium: Getting Data | `assignment_12_module_23_selenium_getting_data` |

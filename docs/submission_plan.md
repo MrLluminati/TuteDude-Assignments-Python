@@ -26,7 +26,7 @@ Use this plan each time an assignment is implemented and prepared for upload.
 | 6 | `assignment_06_module_14_15_tkinter_calculator` | Implemented; package and submit when needed. |
 | 7 | `assignment_07_module_16_postgresql_python` | Next implementation target: PostgreSQL practical pack and evidence plan. |
 | 8 | `assignment_10_module_21_web_scraping` | Complete web scraping practical files. |
-| 9 | `assignment_11_module_19_flask_registration_form` | Build Flask registration form project. |
+| 9 | `assignment_08_module_19_flask_registration_form` | Build Flask registration form project. |
 | 10 | `assignment_11_module_22_opencv_implementations` | Complete OpenCV practicals and capture screenshots. |
 | 11 | `assignment_12_module_20_django_rest_api` | Build Django REST API project; use `django-filter==2.4.0` where required. |
 | 12 | `assignment_12_module_23_selenium_getting_data` | Complete Selenium automation project. |
