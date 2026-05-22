@@ -14,11 +14,13 @@ Compatible module note:
 
 ## Status
 
-Implemented. Local PostgreSQL setup and screenshot evidence are still required before final portal submission.
+Implemented, locally tested, and ready for submission packaging.
+
+Local verification completed on Windows using PostgreSQL 17 and PowerShell. Screenshot evidence has been captured showing database setup, CRUD operations, menu-app operations, and system timestamp.
 
 ## Project Scope
 
-This assignment demonstrates how to connect Python with PostgreSQL and perform database operations using `psycopg2`.
+This assignment demonstrates how to connect Python with PostgreSQL and perform database operations using `psycopg` v3.
 
 Implemented practical files:
 
@@ -26,7 +28,7 @@ Implemented practical files:
 | --- | --- |
 | `.env.example` | Template for local PostgreSQL credentials. |
 | `requirements.txt` | Python dependencies for the project. |
-| `db_config.py` | Reads database configuration from environment variables. |
+| `db_config.py` | Reads database configuration from environment variables and applies a connection timeout. |
 | `db_setup.py` | Creates the required `students` table. |
 | `student_crud.py` | Demonstrates Create, Read, Update, and Delete operations. |
 | `menu_app.py` | Menu-driven terminal application for student record management. |
@@ -64,17 +66,46 @@ Create the database table:
 python .\db_setup.py
 ```
 
+Expected output:
+
+```text
+Database setup completed: students table is ready.
+```
+
 Run the CRUD demonstration:
 
 ```powershell
 python .\student_crud.py
 ```
 
+The CRUD demo inserts sample students, displays records, fetches one student by ID, updates marks, deletes one student, and prints the final records.
+
 Run the interactive app:
 
 ```powershell
 python .\menu_app.py
 ```
+
+The menu app supports:
+
+1. Add student
+2. View all students
+3. View student by ID
+4. Update student marks
+5. Delete student
+6. Exit
+
+## Local Verification Notes
+
+Local testing confirmed:
+
+- PostgreSQL 17 service was running as `postgresql-x64-17`.
+- The PostgreSQL `postgres` user password was reset successfully.
+- The `tutedude_assignment_7` database was created.
+- `db_setup.py` created/verified the `students` table successfully.
+- `student_crud.py` completed insert, read, update, and delete operations successfully.
+- `menu_app.py` completed add, view, update, delete, and exit operations successfully.
+- Screenshot evidence includes terminal output and `Get-Date` timestamp.
 
 ## Evidence Requirements
 
@@ -92,6 +123,20 @@ Suggested screenshots:
 5. Successful `python .\student_crud.py` terminal output.
 6. `menu_app.py` visible in editor.
 7. Successful add/view/update/delete flow in `python .\menu_app.py`.
+8. `Get-Date` output visible in terminal for timestamp evidence.
+
+## Submission Packaging
+
+Do not include the real `.env` file in the submission ZIP because it contains local credentials. Include `.env.example` instead.
+
+Recommended ZIP command from this folder:
+
+```powershell
+Compress-Archive `
+  -Path ".env.example","requirements.txt","db_config.py","db_setup.py","student_crud.py","menu_app.py","README.md" `
+  -DestinationPath "..\..\submissions\AbhijeetKumar_Assignment07_PostgreSQLPython.zip" `
+  -Force
+```
 
 ## Submission Checklist
 
@@ -101,8 +146,8 @@ Suggested screenshots:
 - [x] Implement database table setup.
 - [x] Implement CRUD practical script.
 - [x] Implement menu-driven student management application.
-- [ ] Verify database setup and connection details locally.
-- [ ] Capture required screenshots.
-- [ ] Organize screenshots in lecture/practical order.
-- [ ] Create ZIP or PDF evidence package as allowed by the assignment.
-- [ ] Confirm the submitted package opens correctly.
+- [x] Verify database setup and connection details locally.
+- [x] Capture required screenshots.
+- [x] Organize screenshots in lecture/practical order.
+- [x] Create ZIP package without real `.env` file.
+- [ ] Confirm the submitted package opens correctly before portal upload.
