@@ -430,6 +430,96 @@ to:
 
 ---
 
+## Step 7: Added Simple Error Handling
+
+### What I did
+
+In this step, I updated the `calculate_result()` function so that the calculator does not crash when the expression is invalid.
+
+I added:
+
+- a `try` block for valid calculations;
+- an `except` block for invalid expressions;
+- an `Error` message in the display when calculation fails.
+
+### Code updated in Step 7
+
+```python
+def calculate_result():
+    expression = display.get()
+
+    try:
+        result = eval(expression)
+        display.delete(0, tk.END)
+        display.insert(tk.END, result)
+    except:
+        display.delete(0, tk.END)
+        display.insert(tk.END, "Error")
+```
+
+### What I tested
+
+I tested a valid expression:
+
+```text
+1 + 3 =
+```
+
+The display changed from:
+
+```text
+1+3
+```
+
+to:
+
+```text
+4
+```
+
+I tested an invalid expression:
+
+```text
+1 * =
+```
+
+The display changed to:
+
+```text
+Error
+```
+
+I also tested division by zero:
+
+```text
+5 / 0 =
+```
+
+The display changed to:
+
+```text
+Error
+```
+
+### What I learned
+
+- `try-except` helps prevent the program from crashing when something goes wrong.
+- Invalid expressions can be handled by showing a simple message instead of stopping the app.
+- Division by zero also creates an exception, so it can be handled by the same `except` block.
+- This is a simple beginner-level way to handle calculator errors.
+
+### Screenshot proof
+
+- [Code for `try-except` error handling](screenshot_proofs/step_07_error_handling/step_07_a_code_for_try_except_error_handling.png)
+- [Valid expression `1+3` before equals](screenshot_proofs/step_07_error_handling/step_07_b_valid_expression_1_plus_3_before_equals.png)
+- [Valid result `4` after equals](screenshot_proofs/step_07_error_handling/step_07_c_valid_result_4_after_equals.png)
+- [Invalid expression `1*` before equals](screenshot_proofs/step_07_error_handling/step_07_d_invalid_expression_1_multiply_before_equals.png)
+- [Error after invalid expression](screenshot_proofs/step_07_error_handling/step_07_e_error_after_invalid_expression.png)
+- [Divide-by-zero expression `5/0` before equals](screenshot_proofs/step_07_error_handling/step_07_f_divide_by_zero_expression_5_divide_0_before_equals.png)
+- [Error after divide by zero](screenshot_proofs/step_07_error_handling/step_07_g_error_after_divide_by_zero.png)
+
+---
+
 ## Current Progress Checklist
 
 - [x] Step 1: Create basic Tkinter window and display box.
@@ -438,5 +528,5 @@ to:
 - [x] Step 4: Add clear button.
 - [x] Step 5: Add operator buttons.
 - [x] Step 6: Add equals button and simple calculation.
-- [ ] Step 7: Add simple error handling.
+- [x] Step 7: Add simple error handling.
 - [ ] Step 8: Final testing and packaging.
