@@ -16,6 +16,9 @@ def click_number(number):
 def clear_display():
     display.delete(0, tk.END)
 
+def click_operator(operator):
+    display.insert(tk.END, operator)
+
 button_1 = tk.Button(button_frame, text="1", width=5, height=2, command=lambda: click_number("1"))
 button_1.grid(row=0, column=0)
 
@@ -48,5 +51,17 @@ button_0.grid(row=3, column=1)
 
 clear_button = tk.Button(button_frame, text="C", width=5, height=2, command=clear_display)
 clear_button.grid(row=3, column=0)
+
+plus_button = tk.Button(button_frame, text="+", width=5, height=2, command=lambda: click_operator("+"))
+plus_button.grid(row=0, column=3)
+
+minus_button = tk.Button(button_frame, text="-", width=5, height=2, command=lambda: click_operator("-"))
+minus_button.grid(row=1, column=3)
+
+multiply_button = tk.Button(button_frame, text="*", width=5, height=2, command=lambda: click_operator("*"))
+multiply_button.grid(row=2, column=3)
+
+divide_button = tk.Button(button_frame, text="/", width=5, height=2, command=lambda: click_operator("/"))
+divide_button.grid(row=3, column=3)
 
 window.mainloop()
