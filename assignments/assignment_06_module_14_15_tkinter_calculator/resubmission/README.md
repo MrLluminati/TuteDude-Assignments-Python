@@ -282,13 +282,75 @@ The display became empty.
 
 ---
 
+## Step 5: Added Operator Buttons
+
+### What I did
+
+In this step, I added operator buttons for addition, subtraction, multiplication, and division.
+
+I created:
+
+- a function named `click_operator(operator)`;
+- operator buttons for `+`, `-`, `*`, and `/`;
+- click behavior that inserts the selected operator into the display.
+
+At this stage, the calculator does not calculate yet. It only builds the expression text in the display.
+
+### Code added in Step 5
+
+```python
+def click_operator(operator):
+    display.insert(tk.END, operator)
+
+plus_button = tk.Button(button_frame, text="+", width=5, height=2, command=lambda: click_operator("+"))
+plus_button.grid(row=0, column=3)
+
+minus_button = tk.Button(button_frame, text="-", width=5, height=2, command=lambda: click_operator("-"))
+minus_button.grid(row=1, column=3)
+
+multiply_button = tk.Button(button_frame, text="*", width=5, height=2, command=lambda: click_operator("*"))
+multiply_button.grid(row=2, column=3)
+
+divide_button = tk.Button(button_frame, text="/", width=5, height=2, command=lambda: click_operator("/"))
+divide_button.grid(row=3, column=3)
+```
+
+### What I tested
+
+I clicked:
+
+```text
+1 + 2
+```
+
+The display showed:
+
+```text
+1+2
+```
+
+### What I learned
+
+- Operator buttons can work like number buttons at first by inserting symbols into the display.
+- `lambda` is useful here because each operator button passes a different operator symbol.
+- Building the expression first makes it easier to understand the next step, where the expression will be calculated.
+
+### Screenshot proof
+
+- [Code for `click_operator()` function](screenshot_proofs/step_05_operator_buttons/step_05_a_code_for_click_operator_function.png)
+- [Code for operator buttons](screenshot_proofs/step_05_operator_buttons/step_05_b_code_for_operator_buttons.png)
+- [Operator buttons visible in calculator window](screenshot_proofs/step_05_operator_buttons/step_05_c_operator_buttons_visible_in_window.png)
+- [Expression `1+2` displayed](screenshot_proofs/step_05_operator_buttons/step_05_d_expression_1_plus_2_display_output.png)
+
+---
+
 ## Current Progress Checklist
 
 - [x] Step 1: Create basic Tkinter window and display box.
 - [x] Step 2: Add number buttons `1`, `2`, and `3`.
 - [x] Step 3: Add remaining number buttons `4` to `9` and `0`.
 - [x] Step 4: Add clear button.
-- [ ] Step 5: Add operator buttons.
+- [x] Step 5: Add operator buttons.
 - [ ] Step 6: Add equals button and simple calculation.
 - [ ] Step 7: Add simple error handling.
 - [ ] Step 8: Final testing and packaging.
