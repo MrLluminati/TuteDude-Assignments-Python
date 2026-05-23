@@ -1,0 +1,21 @@
+Personal note for Assignment 7 submission
+=========================================
+
+In this assignment I learned how to connect Python to PostgreSQL using the psycopg library.
+I used a .env file so my database password is not written directly inside the code.
+
+I understood that SQL values should be passed using %s placeholders instead of putting user
+input directly into the query string. This helps avoid SQL injection and also handles
+special characters safely.
+
+The main operations I practiced were:
+- CREATE TABLE in db_setup.py
+- INSERT and SELECT in student_crud.py
+- UPDATE and DELETE in student_crud.py and menu_app.py
+
+Running the programs helped me see how commit() saves changes and how fetchone() /
+fetchall() return data from SELECT queries.
+
+I also learned that if I run the same demo twice with the same email, PostgreSQL shows a
+duplicate key error because email is UNIQUE. That is why student_crud.py deletes old demo
+rows before inserting again.

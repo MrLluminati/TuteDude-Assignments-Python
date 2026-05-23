@@ -1,13 +1,11 @@
-"""Create the PostgreSQL table required for Assignment 7."""
-
-from __future__ import annotations
+# Creates the students table in PostgreSQL.
 
 import psycopg
 
-from db_config import get_database_config
+from db_config import get_db_settings
 
-
-CREATE_STUDENTS_TABLE = """
+# SQL to create the table for this assignment
+create_table_sql = """
 CREATE TABLE IF NOT EXISTS students (
     student_id SERIAL PRIMARY KEY,
     name VARCHAR(100) NOT NULL,
@@ -19,13 +17,16 @@ CREATE TABLE IF NOT EXISTS students (
 """
 
 
-def create_students_table() -> None:
-    """Create the students table if it does not already exist."""
-    config = get_database_config()
+def create_students_table():
+    print("Running SQL:")
+    print(create_table_sql)
 
-    with psycopg.connect(**config.as_dsn_kwargs()) as connection:
-        with connection.cursor() as cursor:
-            cursor.execute(CREATE_STUDENTS_TABLE)
+    connection = psycopg.connect(**get_db_settings())
+    cursor = connection.cursor()
+    cursor.execute(create_table_sql)
+    connection.commit()
+    cursor.close()
+    connection.close()
 
     print("Database setup completed: students table is ready.")
 

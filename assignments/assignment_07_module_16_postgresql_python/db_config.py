@@ -1,50 +1,35 @@
-"""Database configuration helper for Assignment 7.
-
-This module reads PostgreSQL connection details from environment variables.
-Create a local .env file from .env.example before running the scripts.
-"""
-
-from __future__ import annotations
+# Reads PostgreSQL login details from the .env file.
+# Copy .env.example to .env and put your real password there.
 
 import os
-from dataclasses import dataclass
 
 from dotenv import load_dotenv
-
 
 load_dotenv()
 
 
-@dataclass(frozen=True)
-class DatabaseConfig:
-    """PostgreSQL connection configuration."""
+def get_db_settings():
+    """Return a dictionary that psycopg.connect() can use."""
 
-    dbname: str
-    user: str
-    password: str
-    host: str = "localhost"
-    port: int = 5432
-    connect_timeout: int = 5
+    # Name of the database created in pgAdmin or psql
+    dbname = os.getenv("DB_NAME", "tutedude_assignment_7")
 
-    def as_dsn_kwargs(self) -> dict[str, object]:
-        """Return values in the keyword format expected by psycopg.connect."""
-        return {
-            "dbname": self.dbname,
-            "user": self.user,
-            "password": self.password,
-            "host": self.host,
-            "port": self.port,
-            "connect_timeout": self.connect_timeout,
-        }
+    # PostgreSQL username (usually postgres on a local PC)
+    user = os.getenv("DB_USER", "postgres")
 
+    # Password you set during PostgreSQL installation
+    password = os.getenv("DB_PASSWORD", "")
 
-def get_database_config() -> DatabaseConfig:
-    """Read database configuration from environment variables."""
-    return DatabaseConfig(
-        dbname=os.getenv("DB_NAME", "tutedude_assignment_7"),
-        user=os.getenv("DB_USER", "postgres"),
-        password=os.getenv("DB_PASSWORD", ""),
-        host=os.getenv("DB_HOST", "localhost"),
-        port=int(os.getenv("DB_PORT", "5432")),
-        connect_timeout=int(os.getenv("DB_CONNECT_TIMEOUT", "5")),
-    )
+    # Where PostgreSQL is running (localhost means this computer)
+    host = os.getenv("DB_HOST", "localhost")
+
+    # Default PostgreSQL port
+    port = int(os.getenv("DB_PORT", "5432"))
+
+    return {
+        "dbname": dbname,
+        "user": user,
+        "password": password,
+        "host": host,
+        "port": port,
+    }
