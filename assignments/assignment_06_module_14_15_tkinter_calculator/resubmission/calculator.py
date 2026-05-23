@@ -20,20 +20,30 @@ button_frame.pack()
 
 # Functions for button clicks
 
+## Function to handle number button clicks
+ 
 def click_number(number):
     display.insert(tk.END, number)
 
+## Function to clear the display
 def clear_display():
     display.delete(0, tk.END)
 
+## Function to handle operator button clicks
 def click_operator(operator):
     display.insert(tk.END, operator)
 
+## Function to calculate the result when the equals button is clicked
 def calculate_result():
     expression = display.get()
-    result = eval(expression)
-    display.delete(0, tk.END)
-    display.insert(tk.END, result)
+    
+    try:
+        result = eval(expression)
+        display.delete(0, tk.END)
+        display.insert(tk.END, result)
+    except:
+        display.delete(0, tk.END)
+        display.insert(tk.END, "Error")
 
 # Buttons for numbers and operators
 
