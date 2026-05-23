@@ -1,14 +1,24 @@
+## Simple Calculator using Tkinter
+
 import tkinter as tk
+
+# Create the main window
 
 window = tk.Tk()
 window.title("Calculator")
 window.geometry("400x500")
 
+# Create the display for the calculator
+
 display = tk.Entry(window, width=25, font=("Arial", 18), justify="right")
 display.pack(pady=20)
 
+# Create a frame for the buttons
+
 button_frame = tk.Frame(window)
 button_frame.pack()
+
+# Functions for button clicks
 
 def click_number(number):
     display.insert(tk.END, number)
@@ -18,6 +28,14 @@ def clear_display():
 
 def click_operator(operator):
     display.insert(tk.END, operator)
+
+def calculate_result():
+    expression = display.get()
+    result = eval(expression)
+    display.delete(0, tk.END)
+    display.insert(tk.END, result)
+
+# Buttons for numbers and operators
 
 button_1 = tk.Button(button_frame, text="1", width=5, height=2, command=lambda: click_number("1"))
 button_1.grid(row=0, column=0)
@@ -63,5 +81,8 @@ multiply_button.grid(row=2, column=3)
 
 divide_button = tk.Button(button_frame, text="/", width=5, height=2, command=lambda: click_operator("/"))
 divide_button.grid(row=3, column=3)
+
+equals_button = tk.Button(button_frame, text="=", width=5, height=2, command=calculate_result)
+equals_button.grid(row=3, column=2)
 
 window.mainloop()
