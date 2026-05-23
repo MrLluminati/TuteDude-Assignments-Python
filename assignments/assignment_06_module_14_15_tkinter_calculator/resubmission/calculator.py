@@ -13,6 +13,9 @@ button_frame.pack()
 def click_number(number):
     display.insert(tk.END, number)
 
+def clear_display():
+    display.delete(0, tk.END)
+
 button_1 = tk.Button(button_frame, text="1", width=5, height=2, command=lambda: click_number("1"))
 button_1.grid(row=0, column=0)
 
@@ -42,5 +45,8 @@ button_9.grid(row=2, column=2)
 
 button_0 = tk.Button(button_frame, text="0", width=5, height=2, command=lambda: click_number("0"))
 button_0.grid(row=3, column=1)
+
+clear_button = tk.Button(button_frame, text="C", width=5, height=2, command=clear_display)
+clear_button.grid(row=3, column=0)
 
 window.mainloop()
