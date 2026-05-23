@@ -224,12 +224,70 @@ The display showed:
 
 ---
 
+## Step 4: Added Clear Button
+
+### What I did
+
+In this step, I added a clear button to reset the display.
+
+I created:
+
+- a function named `clear_display()`;
+- a `C` button;
+- click behavior that removes all text from the display.
+
+### Code added in Step 4
+
+```python
+def clear_display():
+    display.delete(0, tk.END)
+
+clear_button = tk.Button(button_frame, text="C", width=5, height=2, command=clear_display)
+clear_button.grid(row=3, column=0)
+```
+
+### What I tested
+
+I clicked:
+
+```text
+1 2 3
+```
+
+The display showed:
+
+```text
+123
+```
+
+Then I clicked:
+
+```text
+C
+```
+
+The display became empty.
+
+### What I learned
+
+- `display.delete(0, tk.END)` deletes everything from the Entry field.
+- A button can directly call a function through `command=clear_display`.
+- The clear button is part of basic calculator state management because it resets the current input.
+
+### Screenshot proof
+
+- [Code for clear button](screenshot_proofs/step_04_clear_button/step_04_a_code_for_clear_button.png)
+- [Before clear, display showing `123`](screenshot_proofs/step_04_clear_button/step_04_b_before_clear_display_123.png)
+- [After clear, empty display](screenshot_proofs/step_04_clear_button/step_04_c_after_clear_empty_display.png)
+
+---
+
 ## Current Progress Checklist
 
 - [x] Step 1: Create basic Tkinter window and display box.
 - [x] Step 2: Add number buttons `1`, `2`, and `3`.
 - [x] Step 3: Add remaining number buttons `4` to `9` and `0`.
-- [ ] Step 4: Add clear button.
+- [x] Step 4: Add clear button.
 - [ ] Step 5: Add operator buttons.
 - [ ] Step 6: Add equals button and simple calculation.
 - [ ] Step 7: Add simple error handling.
