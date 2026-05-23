@@ -1,4 +1,4 @@
-## Simple Calculator using Tkinter
+# Simple Calculator using Tkinter
 
 import tkinter as tk
 
@@ -84,5 +84,7 @@ divide_button.grid(row=3, column=3)
 
 equals_button = tk.Button(button_frame, text="=", width=5, height=2, command=calculate_result)
 equals_button.grid(row=3, column=2)
+
+# Start the main event loop
 
 window.mainloop()
