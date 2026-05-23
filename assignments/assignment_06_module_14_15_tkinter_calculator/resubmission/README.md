@@ -344,6 +344,92 @@ The display showed:
 
 ---
 
+## Step 6: Added Equals Button and Basic Calculation
+
+### What I did
+
+In this step, I added the equals button so that the expression typed into the display can be calculated.
+
+I created:
+
+- a function named `calculate_result()`;
+- an equals button `=`;
+- basic calculation using Python's `eval()` function;
+- display replacement so that the expression is replaced by the final result.
+
+At this stage, the calculator can calculate valid expressions. Error handling will be added separately in the next step.
+
+### Code added in Step 6
+
+```python
+def calculate_result():
+    expression = display.get()
+    result = eval(expression)
+    display.delete(0, tk.END)
+    display.insert(tk.END, result)
+
+equals_button = tk.Button(button_frame, text="=", width=5, height=2, command=calculate_result)
+equals_button.grid(row=3, column=2)
+```
+
+### What I tested
+
+I clicked:
+
+```text
+1 + 2 =
+```
+
+The display changed from:
+
+```text
+1+2
+```
+
+to:
+
+```text
+3
+```
+
+I also tested:
+
+```text
+7 * 10 =
+```
+
+The display changed from:
+
+```text
+7*10
+```
+
+to:
+
+```text
+70
+```
+
+### What I learned
+
+- `display.get()` reads the current expression from the Entry field.
+- `eval(expression)` can calculate a simple Python expression stored as text.
+- `display.delete(0, tk.END)` clears the old expression.
+- `display.insert(tk.END, result)` shows the result in the display.
+- The equals button connects the calculation function to the GUI.
+
+### Screenshot proof
+
+- [Code for `calculate_result()` function](screenshot_proofs/step_06_equals_button/step_06_a_code_for_calculate_result_function.png)
+- [Code for equals button](screenshot_proofs/step_06_equals_button/step_06_b_code_for_equals_button.png)
+- [Equals button visible in calculator window](screenshot_proofs/step_06_equals_button/step_06_c_equals_button_visible_in_window.png)
+- [Expression `1+2` before equals](screenshot_proofs/step_06_equals_button/step_06_d_expression_1_plus_2_before_equals.png)
+- [Result `3` after equals](screenshot_proofs/step_06_equals_button/step_06_e_result_3_after_equals.png)
+- [Expression `7*10` before equals](screenshot_proofs/step_06_equals_button/step_06_f_expression_7_multiply_10_before_equals.png)
+- [Result `70` after equals](screenshot_proofs/step_06_equals_button/step_06_g_result_70_after_equals.png)
+
+---
+
 ## Current Progress Checklist
 
 - [x] Step 1: Create basic Tkinter window and display box.
@@ -351,6 +437,6 @@ The display showed:
 - [x] Step 3: Add remaining number buttons `4` to `9` and `0`.
 - [x] Step 4: Add clear button.
 - [x] Step 5: Add operator buttons.
-- [ ] Step 6: Add equals button and simple calculation.
+- [x] Step 6: Add equals button and simple calculation.
 - [ ] Step 7: Add simple error handling.
 - [ ] Step 8: Final testing and packaging.
