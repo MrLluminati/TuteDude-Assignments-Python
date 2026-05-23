@@ -520,6 +520,53 @@ Error
 
 ---
 
+## Step 8: Final Testing and Packaging
+
+### What I did
+
+In this final step, I tested the completed calculator after adding number buttons, operator buttons, the equals button, the clear button, and basic error handling.
+
+I checked that the calculator can handle normal calculations as well as simple error situations.
+
+### Final tests completed
+
+| Test | Expression | Expected result |
+| --- | --- | --- |
+| Addition | `1+6` | `7` |
+| Subtraction | `4-7` | `-3` |
+| Multiplication | `7*45` | `315` |
+| Division | `5/4` | `1.25` |
+| Divide by zero | `5/0` | `Error` |
+| Invalid expression | `5*` | `Error` |
+| Clear button | Pressed `C` | Display cleared |
+
+### What I learned
+
+- Final testing is important before packaging the project.
+- A calculator should be tested with all basic operators.
+- Error cases are as important as successful calculation cases.
+- Screenshot proofs help show the actual working process instead of only submitting code.
+
+### Screenshot proof
+
+- [Final app running](screenshot_proofs/step_08_final_testing/step_08_a_final_app_running.png)
+- [Final code and app view](screenshot_proofs/step_08_final_testing/step_08_b_final_code_and_app_view.png)
+- [Addition expression `1+6`](screenshot_proofs/step_08_final_testing/step_08_c_final_addition_expression_1_plus_6.png)
+- [Addition result `7`](screenshot_proofs/step_08_final_testing/step_08_d_final_addition_result_7.png)
+- [Subtraction expression `4-7`](screenshot_proofs/step_08_final_testing/step_08_e_final_subtraction_expression_4_minus_7.png)
+- [Subtraction result `-3`](screenshot_proofs/step_08_final_testing/step_08_f_final_subtraction_result_minus_3.png)
+- [Multiplication expression `7*45`](screenshot_proofs/step_08_final_testing/step_08_g_final_multiplication_expression_7_multiply_45.png)
+- [Multiplication result `315`](screenshot_proofs/step_08_final_testing/step_08_h_final_multiplication_result_315.png)
+- [Division expression `5/4`](screenshot_proofs/step_08_final_testing/step_08_i_final_division_expression_5_divide_4.png)
+- [Division result `1.25`](screenshot_proofs/step_08_final_testing/step_08_j_final_division_result_1_point_25.png)
+- [Divide-by-zero expression `5/0`](screenshot_proofs/step_08_final_testing/step_08_k_final_divide_by_zero_expression_5_divide_0.png)
+- [Divide-by-zero error](screenshot_proofs/step_08_final_testing/step_08_l_final_divide_by_zero_error.png)
+- [Invalid expression `5*`](screenshot_proofs/step_08_final_testing/step_08_m_final_invalid_expression_5_multiply.png)
+- [Invalid expression error](screenshot_proofs/step_08_final_testing/step_08_n_final_invalid_expression_error.png)
+- [Clear button final test](screenshot_proofs/step_08_final_testing/step_08_o_final_clear_button_test.png)
+
+---
+
 ## Current Progress Checklist
 
 - [x] Step 1: Create basic Tkinter window and display box.
@@ -529,4 +576,4 @@ Error
 - [x] Step 5: Add operator buttons.
 - [x] Step 6: Add equals button and simple calculation.
 - [x] Step 7: Add simple error handling.
-- [ ] Step 8: Final testing and packaging.
+- [x] Step 8: Final testing and packaging.
