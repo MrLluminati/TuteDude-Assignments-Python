@@ -16,8 +16,8 @@ For this resubmission, AI is being used only for conceptual guidance, debugging 
 
 | File | Purpose |
 | --- | --- |
-| `calculator.py` | Beginner-level Tkinter calculator rebuilt step by step. |
-| `screenshot_proofs/` | Screenshots showing progress, mistakes, fixes, and outputs. |
+| [`calculator.py`](calculator.py) | Beginner-level Tkinter calculator rebuilt step by step. |
+| [`screenshot_proofs/`](screenshot_proofs/) | Screenshots showing progress, mistakes, fixes, and outputs. |
 
 ---
 
@@ -74,9 +74,9 @@ window.mainloop()
 
 ### Screenshot proof
 
-- `screenshot_proofs/step_01_basic_window/step_01_a_terminal_mistakes_and_nameerror.png`
-- `screenshot_proofs/step_01_basic_window/step_01_b_corrected_basic_window_code.png`
-- `screenshot_proofs/step_01_basic_window/step_01_c_basic_tkinter_window_output.png`
+- [Terminal mistakes and `NameError`](screenshot_proofs/step_01_basic_window/step_01_a_terminal_mistakes_and_nameerror.png)
+- [Corrected basic window code](screenshot_proofs/step_01_basic_window/step_01_b_corrected_basic_window_code.png)
+- [Basic Tkinter window output](screenshot_proofs/step_01_basic_window/step_01_c_basic_tkinter_window_output.png)
 
 ---
 
@@ -147,12 +147,80 @@ The display updated step by step:
 
 ### Screenshot proof
 
-- `screenshot_proofs/step_02_number_buttons/step_02_a_code_for_buttons_1_2_3.png`
-- `screenshot_proofs/step_02_number_buttons/step_02_b_terminal_run_from_resubmission_folder.png`
-- `screenshot_proofs/step_02_number_buttons/step_02_c_buttons_visible_in_window.png`
-- `screenshot_proofs/step_02_number_buttons/step_02_d_click_1_display_output.png`
-- `screenshot_proofs/step_02_number_buttons/step_02_e_click_1_2_display_output.png`
-- `screenshot_proofs/step_02_number_buttons/step_02_f_click_1_2_3_display_output.png`
+- [Code for buttons 1, 2, and 3](screenshot_proofs/step_02_number_buttons/step_02_a_code_for_buttons_1_2_3.png)
+- [Terminal run from resubmission folder](screenshot_proofs/step_02_number_buttons/step_02_b_terminal_run_from_resubmission_folder.png)
+- [Buttons visible in calculator window](screenshot_proofs/step_02_number_buttons/step_02_c_buttons_visible_in_window.png)
+- [Display after clicking 1](screenshot_proofs/step_02_number_buttons/step_02_d_click_1_display_output.png)
+- [Display after clicking 1 and 2](screenshot_proofs/step_02_number_buttons/step_02_e_click_1_2_display_output.png)
+- [Display after clicking 1, 2, and 3](screenshot_proofs/step_02_number_buttons/step_02_f_click_1_2_3_display_output.png)
+
+---
+
+## Step 3: Added Remaining Number Buttons 4 to 9 and 0
+
+### What I did
+
+In this step, I completed the number button layout by adding buttons for `4`, `5`, `6`, `7`, `8`, `9`, and `0`.
+
+I placed the buttons using `grid()` so that the calculator starts looking like a real calculator keypad.
+
+### Code added in Step 3
+
+```python
+button_4 = tk.Button(button_frame, text="4", width=5, height=2, command=lambda: click_number("4"))
+button_4.grid(row=1, column=0)
+
+button_5 = tk.Button(button_frame, text="5", width=5, height=2, command=lambda: click_number("5"))
+button_5.grid(row=1, column=1)
+
+button_6 = tk.Button(button_frame, text="6", width=5, height=2, command=lambda: click_number("6"))
+button_6.grid(row=1, column=2)
+
+button_7 = tk.Button(button_frame, text="7", width=5, height=2, command=lambda: click_number("7"))
+button_7.grid(row=2, column=0)
+
+button_8 = tk.Button(button_frame, text="8", width=5, height=2, command=lambda: click_number("8"))
+button_8.grid(row=2, column=1)
+
+button_9 = tk.Button(button_frame, text="9", width=5, height=2, command=lambda: click_number("9"))
+button_9.grid(row=2, column=2)
+
+button_0 = tk.Button(button_frame, text="0", width=5, height=2, command=lambda: click_number("0"))
+button_0.grid(row=3, column=1)
+```
+
+### What I tested
+
+I ran:
+
+```powershell
+python .\calculator.py
+```
+
+Then I clicked all number buttons in order:
+
+```text
+1 2 3 4 5 6 7 8 9 0
+```
+
+The display showed:
+
+```text
+1234567890
+```
+
+### What I learned
+
+- More buttons can be added by repeating the same basic `tk.Button()` pattern.
+- `grid(row, column)` helps place buttons in a simple keypad layout.
+- Each number button can call the same `click_number()` function with a different value.
+- Repeating similar code manually helped me understand the pattern before making it shorter or cleaner.
+
+### Screenshot proof
+
+- [Code for all number buttons](screenshot_proofs/step_03_all_number_buttons/step_03_a_code_for_all_number_buttons.png)
+- [All number buttons with `1234567890` displayed](screenshot_proofs/step_03_all_number_buttons/step_03_b_all_number_buttons_and_1234567890_output.png)
+- [Terminal run from resubmission folder](screenshot_proofs/step_03_all_number_buttons/step_03_c_terminal_run_from_resubmission_folder.png)
 
 ---
 
@@ -160,7 +228,7 @@ The display updated step by step:
 
 - [x] Step 1: Create basic Tkinter window and display box.
 - [x] Step 2: Add number buttons `1`, `2`, and `3`.
-- [ ] Step 3: Add remaining number buttons `4` to `9` and `0`.
+- [x] Step 3: Add remaining number buttons `4` to `9` and `0`.
 - [ ] Step 4: Add clear button.
 - [ ] Step 5: Add operator buttons.
 - [ ] Step 6: Add equals button and simple calculation.
