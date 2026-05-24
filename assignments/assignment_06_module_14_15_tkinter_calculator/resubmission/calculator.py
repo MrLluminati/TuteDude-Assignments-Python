@@ -13,6 +13,12 @@ window.geometry("400x500")
 display = tk.Entry(window, width=25, font=("Arial", 18), justify="right")
 display.pack(pady=20)
 
+# Variables to store the first number, operator, and second number
+
+first_number = ""
+operator = ""
+second_number = ""
+
 # Create a frame for the buttons
 
 button_frame = tk.Frame(window)
@@ -23,27 +29,76 @@ button_frame.pack()
 ## Function to handle number button clicks
  
 def click_number(number):
+    global first_number
+    global second_number
+    global operator
+
+    if operator == "":
+        first_number = first_number + number
+    else:
+        second_number = second_number + number
+    
     display.insert(tk.END, number)
 
 ## Function to clear the display
+
 def clear_display():
+    global first_number
+    global second_number
+    global operator
+
+    first_number = ""
+    second_number = ""
+    operator = ""
+
     display.delete(0, tk.END)
 
 ## Function to handle operator button clicks
-def click_operator(operator):
-    display.insert(tk.END, operator)
+
+def click_operator(selected_operator):
+    global operator
+
+    if first_number != "" and operator == "":
+        operator = selected_operator
+        display.insert(tk.END, selected_operator)
 
 ## Function to calculate the result when the equals button is clicked
+
 def calculate_result():
-    expression = display.get()
-    
-    try:
-        result = eval(expression)
-        display.delete(0, tk.END)
-        display.insert(tk.END, result)
-    except:
+    global first_number
+    global second_number
+    global operator
+
+    if first_number == "" or operator == "" or second_number == "":
         display.delete(0, tk.END)
         display.insert(tk.END, "Error")
+        return
+    num1 = float(first_number)
+    num2 = float(second_number)
+
+    if operator == "+":
+        result = num1 + num2
+    elif operator == "-":
+        result = num1 - num2
+    elif operator == "*":
+        result = num1 * num2
+    elif operator == "/":
+        if num2 == 0:
+            display.delete(0, tk.END)
+            display.insert(tk.END, "Error")
+            return
+        result = num1 / num2
+    else:
+        display.delete(0, tk.END)
+        display.insert(tk.END, "Error")
+        return
+    
+    display.delete(0, tk.END)
+    display.insert(tk.END, result)
+
+    first_number = str(result)
+    operator = ""
+    second_number = ""
 
 # Buttons for numbers and operators
 
