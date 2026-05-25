@@ -4,7 +4,7 @@
 
 My earlier Assignment 7 submission was rejected because the code and screenshots did not clearly show my own learning process. The mentor specifically asked me to simplify the implementation, avoid overly professional patterns, show the Python code files beside the terminal output, and explain what I learned in my own words.
 
-This resubmission is being rebuilt step by step in a beginner-friendly style. I am documenting the errors, fixes, code, and terminal output together so that the learning process is visible.
+This resubmission is being rebuilt step by step in a beginner-friendly style. I am documenting the errors, fixes, code, terminal output, and personal learning note so that the learning process is visible.
 
 ## Files in this resubmission
 
@@ -12,9 +12,9 @@ This resubmission is being rebuilt step by step in a beginner-friendly style. I 
 - `db_setup.py` - creates the `students` table
 - `student_crud.py` - contains simple INSERT, SELECT, UPDATE, and DELETE functions
 - `menu_app.py` - contains a simple menu-based program
+- `LEARNING_NOTE.txt` - personal note explaining what I learned
 - `.env.example` - sample environment file without the real password
 - `requirements.txt` - required Python packages
-- `LEARNING_NOTE.txt` - personal note about what I learned
 - `screenshot_proofs/` - step-wise screenshots showing code and terminal output
 
 ## Important note about `.env`
@@ -333,10 +333,42 @@ The terminal output showed that the menu successfully called the CRUD functions 
 
 ---
 
+## Step 4 - Personal learning note
+
+### What I did
+
+In this step, I added `LEARNING_NOTE.txt` to explain the assignment in my own words.
+
+The note explains:
+
+- why the assignment was resubmitted;
+- what I learned about connecting Python with PostgreSQL;
+- what I learned about `INSERT`, `SELECT`, `UPDATE`, and `DELETE`;
+- why parameterized queries are used;
+- the mistakes I faced during testing;
+- how I fixed the password issue, table structure issue, and student id issue;
+- what I learned from building the simple menu app.
+
+### Why this file was added
+
+The mentor specifically asked for a personal note explaining what I learned. This file is included so that the submission does not only show code, but also shows my understanding of the database operations and debugging process.
+
+### File added
+
+- [`LEARNING_NOTE.txt`](LEARNING_NOTE.txt)
+
+### What I learned
+
+- Writing a personal note helped me explain the assignment in my own words.
+- Database work requires checking the connection, the table structure, the SQL queries, and the terminal output.
+- Errors are useful when they are documented properly because they show what was wrong and how it was fixed.
+
+---
+
 ## Progress checklist
 
 - [x] Step 1: Database configuration and table setup
 - [x] Step 2: Simple student CRUD operations
 - [x] Step 3: Simple menu application
-- [ ] Step 4: Personal learning note
+- [x] Step 4: Personal learning note
 - [ ] Step 5: Final testing and packaging
