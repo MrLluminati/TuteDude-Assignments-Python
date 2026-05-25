@@ -150,11 +150,99 @@ This confirms that Flask successfully found and rendered the HTML template.
 
 ---
 
+## Step 3 - Read submitted form data using POST
+
+### What I did
+
+In Step 3, I changed the registration form so that it submits data using the POST method.
+
+In `register.html`, I changed the form tag to:
+
+```html
+<form method="POST">
+```
+
+This means the form sends data to the Flask route when the Register button is clicked.
+
+### Change made in app.py
+
+I imported `request` from Flask:
+
+```python
+from flask import Flask, render_template, request
+```
+
+I also changed the home route so it can accept both GET and POST requests:
+
+```python
+@app.route("/", methods=["GET", "POST"])
+```
+
+Inside the route, I used `request.form.get()` to read the submitted form values:
+
+```python
+name = request.form.get("name")
+email = request.form.get("email")
+course = request.form.get("course")
+```
+
+For this step, I printed the submitted data in the terminal:
+
+```python
+print("Form submitted successfully.")
+print("Name:", name)
+print("Email:", email)
+print("Course:", course)
+```
+
+### Test data used
+
+I filled the form with:
+
+```text
+Full Name: Abhijeet Kumar
+Email: abhikr14118@gmail.com
+Course: Python
+```
+
+After clicking Register, the terminal displayed the submitted values.
+
+### Output confirmed
+
+The terminal showed:
+
+```text
+Form submitted successfully.
+Name: Abhijeet Kumar
+Email: abhikr14118@gmail.com
+Course: Python
+```
+
+This confirms that Flask successfully received the submitted form data.
+
+### What I learned
+
+- A normal page load uses a GET request.
+- A submitted form can use a POST request.
+- `methods=["GET", "POST"]` allows the same Flask route to handle both page display and form submission.
+- `request.form.get("name")` reads the value submitted from the input field whose name is `name`.
+- The `name` attributes in the HTML form are important because Flask uses them to identify each submitted value.
+- At this step, the data is only printed in the terminal. A success page will be added later.
+
+### Screenshot proof
+
+- [register.html POST method code](screenshot_proofs/step_03_post_form_data/step_03_a_register_html_post_method_code.png)
+- [app.py request.form code](screenshot_proofs/step_03_post_form_data/step_03_b_app_py_request_form_code.png)
+- [filled registration form in browser](screenshot_proofs/step_03_post_form_data/step_03_c_filled_form_browser.png)
+- [terminal output showing submitted data](screenshot_proofs/step_03_post_form_data/step_03_d_terminal_printed_submitted_data.png)
+
+---
+
 ## Progress checklist
 
 - [x] Step 1: Basic Flask app and home page
 - [x] Step 2: HTML registration form
-- [ ] Step 3: Read submitted form data using POST
+- [x] Step 3: Read submitted form data using POST
 - [ ] Step 4: Add simple validation
 - [ ] Step 5: Add success page
 - [ ] Step 6: Add basic CSS
