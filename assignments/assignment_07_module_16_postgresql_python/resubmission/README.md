@@ -11,7 +11,7 @@ This resubmission is being rebuilt step by step in a beginner-friendly style. I 
 - `db_config.py` - reads PostgreSQL connection details from `.env`
 - `db_setup.py` - creates the `students` table
 - `student_crud.py` - contains simple INSERT, SELECT, UPDATE, and DELETE functions
-- `menu_app.py` - will contain a simple menu-based program
+- `menu_app.py` - contains a simple menu-based program
 - `.env.example` - sample environment file without the real password
 - `requirements.txt` - required Python packages
 - `LEARNING_NOTE.txt` - personal note about what I learned
@@ -245,10 +245,98 @@ The final `Student Records:` output was empty, showing that the delete operation
 
 ---
 
+## Step 3 - Simple menu application
+
+### What I did
+
+In this step, I created `menu_app.py`. The purpose of this file is to give the user a simple text menu for running the database operations from `student_crud.py`.
+
+The menu imports these functions:
+
+- `add_student()`
+- `view_students()`
+- `update_student()`
+- `delete_student()`
+
+The menu then asks the user to select an option from 1 to 5.
+
+### Menu options
+
+```text
+Student Database Menu
+1. Add student
+2. View students
+3. Update student
+4. Delete student
+5. Exit
+```
+
+### How the menu works
+
+The program uses a `while True` loop so that the menu keeps appearing after each operation. The loop stops only when the user selects option `5`.
+
+The program uses this line to take user input:
+
+```python
+choice = int(input("Enter your choice: "))
+```
+
+Since the input is converted into an integer, I used `try` and `except ValueError` to handle non-number input.
+
+### Input validation used
+
+If the user enters text instead of a number, the program prints:
+
+```text
+Please enter a number only.
+```
+
+If the user enters a number outside 1 to 5, the program prints:
+
+```text
+Invalid choice. Please select from 1 to 5.
+```
+
+This keeps the menu from crashing when the wrong input is entered.
+
+### Successful menu test flow
+
+I tested this flow:
+
+```text
+1 -> Add student
+2 -> View students
+3 -> Update student
+2 -> View updated student
+4 -> Delete student
+2 -> Confirm final empty records
+5 -> Exit
+```
+
+The terminal output showed that the menu successfully called the CRUD functions from `student_crud.py`.
+
+### What I learned
+
+- A menu program can call functions from another Python file using `import`.
+- `while True` can be used to keep a menu running until the user exits.
+- `break` exits the loop.
+- `continue` skips the rest of the current loop and shows the menu again.
+- `try` and `except ValueError` prevent the program from crashing when the user enters non-number input.
+- The menu file should be simple and should only decide which function to call.
+- The actual database work remains inside `student_crud.py`.
+
+### Screenshot proof
+
+- [menu_app.py add/view code and output](screenshot_proofs/step_03_menu_app/step_03_a_menu_app_add_and_view_code_output.png)
+- [menu_app.py update/delete code and output](screenshot_proofs/step_03_menu_app/step_03_b_menu_app_update_delete_code_output.png)
+- [menu_app.py invalid input and exit output](screenshot_proofs/step_03_menu_app/step_03_c_menu_app_invalid_input_and_exit_output.png)
+
+---
+
 ## Progress checklist
 
 - [x] Step 1: Database configuration and table setup
 - [x] Step 2: Simple student CRUD operations
-- [ ] Step 3: Simple menu application
+- [x] Step 3: Simple menu application
 - [ ] Step 4: Personal learning note
 - [ ] Step 5: Final testing and packaging
