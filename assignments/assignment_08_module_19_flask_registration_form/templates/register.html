@@ -6,6 +6,10 @@
 <body>
     <h1>Student Registration Form</h1>
 
+    {% if error %}
+        <p style="color: red;">{{ error }}</p>
+    {% endif %}
+
     <form method="POST">
         <label>Full Name:</label><br>
         <input type="text" name="name"><br><br>
