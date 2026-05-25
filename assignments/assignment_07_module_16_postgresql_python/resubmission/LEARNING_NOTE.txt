@@ -1,0 +1,17 @@
+Assignment 7 Resubmission - Personal Learning Note
+
+In my earlier submission, the code was working, but I understand why it was rejected. The code and documentation looked too polished, and the screenshots did not properly show my actual learning process. In this resubmission, I rebuilt the project step by step and kept the code simpler.
+
+In Step 1, I learned how Python connects with PostgreSQL. I used a .env file to keep the database password separate from the code. I learned that psycopg.connect() is used to connect Python with PostgreSQL, cursor.execute() is used to run SQL commands, and connection.commit() is needed when saving database changes.
+
+I also made a password mistake while connecting to PostgreSQL. The error helped me understand that Python was reaching PostgreSQL, but PostgreSQL was rejecting the login details. After correcting the password in the .env file, db_setup.py worked and created the students table.
+
+In Step 2, I learned the basic CRUD operations. INSERT adds a record, SELECT reads records, UPDATE changes a record, and DELETE removes a record. I also learned that parameterized queries use placeholders like %s and pass values separately. This is better than directly joining values into SQL strings.
+
+I also faced an error where the age column did not exist. I learned that CREATE TABLE IF NOT EXISTS does not update an old table if it already exists with a different structure. I fixed it by clearing/recreating the table and then running db_setup.py again.
+
+Another issue was with student id. At first, update and delete used a fixed id. Later I learned that the inserted id may not always be 1. I fixed this by using RETURNING id and storing the inserted id, so update and delete worked on the same student.
+
+In Step 3, I learned how to create a simple menu application. menu_app.py only asks for user choice and calls functions from student_crud.py. I learned how while True keeps the menu running, how break exits the menu, and how try/except ValueError handles non-number input.
+
+Overall, I learned that database programming needs proper testing. The table structure, connection details, SQL commands, and terminal output all matter. I also learned that screenshots should show both code and output so the learning process is clear.
