@@ -365,10 +365,77 @@ The mentor specifically asked for a personal note explaining what I learned. Thi
 
 ---
 
+## Step 5 - Final testing and packaging
+
+### What I did
+
+In this step, I performed a final test of the resubmission before packaging.
+
+I ran:
+
+```powershell
+python .\db_setup.py
+python .\student_crud.py
+python .\menu_app.py
+```
+
+Before final testing, I cleared the table using:
+
+```sql
+TRUNCATE TABLE students RESTART IDENTITY;
+```
+
+This made the final output easier to understand because the student id started cleanly again.
+
+### Final testing covered
+
+The final screenshots show:
+
+- `db_setup.py` successfully creating or confirming the `students` table;
+- `student_crud.py` running INSERT, SELECT, UPDATE, DELETE, and final SELECT;
+- `menu_app.py` adding a student through the menu;
+- `menu_app.py` viewing the student;
+- `menu_app.py` updating the student;
+- `menu_app.py` deleting the student;
+- final view after delete showing no student records;
+- invalid text input such as `abc` being handled with `Please enter a number only.`;
+- invalid numeric input such as `9` being handled with `Invalid choice. Please select from 1 to 5.`;
+- option `5` exiting the program.
+
+### Final test flow used for menu_app.py
+
+```text
+1 -> Add student
+2 -> View students
+3 -> Update student
+2 -> View updated student
+4 -> Delete student
+2 -> Confirm empty records
+abc -> Test non-number input
+9 -> Test invalid menu number
+5 -> Exit
+```
+
+### What I learned
+
+- Final testing should cover the normal successful flow and invalid input cases.
+- Running all files before packaging helps confirm that the project is complete.
+- A clean table makes the final demonstration easier to read.
+- Screenshots showing both code and output make the submission clearer.
+
+### Screenshot proof
+
+- [final db_setup and student_crud start](screenshot_proofs/step_05_final_testing/step_05_a_final_db_setup_and_student_crud_start.png)
+- [final student_crud and menu add/view](screenshot_proofs/step_05_final_testing/step_05_b_final_student_crud_and_menu_add_view.png)
+- [final menu update/delete/empty view](screenshot_proofs/step_05_final_testing/step_05_c_final_menu_update_delete_empty_view.png)
+- [final menu invalid input, invalid choice, and exit](screenshot_proofs/step_05_final_testing/step_05_d_final_menu_invalid_input_invalid_choice_exit.png)
+
+---
+
 ## Progress checklist
 
 - [x] Step 1: Database configuration and table setup
 - [x] Step 2: Simple student CRUD operations
 - [x] Step 3: Simple menu application
 - [x] Step 4: Personal learning note
-- [ ] Step 5: Final testing and packaging
+- [x] Step 5: Final testing and packaging
