@@ -1,14 +1,14 @@
 # Assignment 8 - Flask Registration Form
-# Step 1: Basic Flask app
+# Step 2: Display an HTML registration form
 
-from flask import Flask
+from flask import Flask, render_template
 
 app = Flask(__name__)
 
 
 @app.route("/")
 def home():
-    return "<h1>Student Registration Form</h1><p>Flask app is running.</p>"
+    return render_template("register.html")
 
 
 if __name__ == "__main__":
