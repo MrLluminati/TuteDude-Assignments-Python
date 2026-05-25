@@ -4,13 +4,13 @@
 
 My earlier Assignment 7 submission was rejected because the code and screenshots did not clearly show my own learning process. The mentor specifically asked me to simplify the implementation, avoid overly professional patterns, show the Python code files beside the terminal output, and explain what I learned in my own words.
 
-This resubmission is being rebuilt step by step in a beginner-friendly style.
+This resubmission is being rebuilt step by step in a beginner-friendly style. I am documenting the errors, fixes, code, and terminal output together so that the learning process is visible.
 
 ## Files in this resubmission
 
 - `db_config.py` - reads PostgreSQL connection details from `.env`
 - `db_setup.py` - creates the `students` table
-- `student_crud.py` - will contain simple INSERT, SELECT, UPDATE, and DELETE functions
+- `student_crud.py` - contains simple INSERT, SELECT, UPDATE, and DELETE functions
 - `menu_app.py` - will contain a simple menu-based program
 - `.env.example` - sample environment file without the real password
 - `requirements.txt` - required Python packages
@@ -111,10 +111,144 @@ students table created successfully.
 
 ---
 
+## Step 2 - Simple student CRUD operations
+
+### What I did
+
+In this step, I created `student_crud.py` to perform the four basic database operations:
+
+- `INSERT` - add a new student record
+- `SELECT` - view student records
+- `UPDATE` - change an existing student record
+- `DELETE` - remove a student record
+
+I used simple functions instead of classes or repository patterns:
+
+- `add_student()`
+- `view_students()`
+- `update_student()`
+- `delete_student()`
+
+Each function connects to PostgreSQL, creates a cursor, runs one SQL command, commits if needed, and then closes the cursor and connection.
+
+### SQL commands used
+
+#### INSERT
+
+```sql
+INSERT INTO students (name, age, course) VALUES (%s, %s, %s) RETURNING id;
+```
+
+This adds a student and returns the newly created student id.
+
+#### SELECT
+
+```sql
+SELECT id, name, age, course FROM students ORDER BY id;
+```
+
+This reads student records from the table.
+
+#### UPDATE
+
+```sql
+UPDATE students SET course = %s WHERE id = %s;
+```
+
+This updates the course of the inserted student.
+
+#### DELETE
+
+```sql
+DELETE FROM students WHERE id = %s;
+```
+
+This deletes the same student record.
+
+### Debugging note
+
+During testing, I first received this error:
+
+```text
+psycopg.errors.UndefinedColumn: column "age" of relation "students" does not exist
+```
+
+I learned that `CREATE TABLE IF NOT EXISTS` does not change an old table if the table already exists. My old `students` table had a different structure, so the new `age` column was missing.
+
+To fix this, I dropped or truncated the old table and recreated the table using `db_setup.py`. I also used:
+
+```sql
+TRUNCATE TABLE students RESTART IDENTITY;
+```
+
+This cleared old test records and restarted the id numbering from 1 for a clean demonstration.
+
+### Important correction made in Step 2
+
+At first, I tried using a fixed student id like `1` for update and delete. That caused a problem when the inserted student received a different id.
+
+To fix it, I used `RETURNING id` in the INSERT query and stored the inserted id in this variable:
+
+```python
+current_student_id = None
+```
+
+After inserting the row, I used:
+
+```python
+inserted_row = cursor.fetchone()
+current_student_id = inserted_row[0]
+```
+
+Then `update_student()` and `delete_student()` used the same `current_student_id`. This made the INSERT, UPDATE, and DELETE operations work on the same student record.
+
+### Successful output summary
+
+The clean final run showed:
+
+```text
+Inserted student id: 1
+
+Student Records:
+(1, 'Abhijeet Kumar', 25, 'Python')
+
+Student updated successfully.
+
+Student Records:
+(1, 'Abhijeet Kumar', 25, 'PostgreSQL with Python')
+
+Student deleted successfully.
+
+Student Records:
+```
+
+The final `Student Records:` output was empty, showing that the delete operation worked.
+
+### What I learned
+
+- Parameterized queries use `%s` placeholders and pass actual values separately.
+- `RETURNING id` can be used in PostgreSQL to get the id of a newly inserted row.
+- `fetchone()` reads one returned row from the cursor.
+- `fetchall()` reads all selected rows from the cursor.
+- `INSERT`, `UPDATE`, and `DELETE` need `connection.commit()` to save changes.
+- `SELECT` is used to check whether the database operation worked.
+- Old database tables can cause errors if their structure does not match the current Python code.
+- Screenshots should show both the Python code and terminal output so the working process is clear.
+
+### Screenshot proof
+
+- [student_crud.py INSERT code and output](screenshot_proofs/step_02_student_crud_operations/step_02_a_student_crud_insert_code_and_output.png)
+- [student_crud.py view/update code and output](screenshot_proofs/step_02_student_crud_operations/step_02_b_student_crud_view_update_code_and_output.png)
+- [student_crud.py update code and clean output](screenshot_proofs/step_02_student_crud_operations/step_02_c_student_crud_update_code_and_clean_output.png)
+- [student_crud.py delete code and final empty SELECT](screenshot_proofs/step_02_student_crud_operations/step_02_d_student_crud_delete_code_and_final_empty_select.png)
+- [debugging screenshot showing missing age column error](screenshot_proofs/step_02_student_crud_operations/step_02_e_debug_age_column_missing_error.png)
+
+---
+
 ## Progress checklist
 
 - [x] Step 1: Database configuration and table setup
-- [ ] Step 2: Simple student CRUD operations
+- [x] Step 2: Simple student CRUD operations
 - [ ] Step 3: Simple menu application
 - [ ] Step 4: Personal learning note
 - [ ] Step 5: Final testing and packaging
