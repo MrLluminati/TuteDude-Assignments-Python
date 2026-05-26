@@ -1,23 +1,48 @@
-# Assignment 12: Module 20 - Implementing REST API Using Django
+# Assignment 9: Module 19 - REST API Using Django
 
-## What This Assignment Teaches
+## Portal task
 
-Django project structure, REST API endpoints, serializers/views, and API testing.
+```text
+Assignment 9
+Implementation of REST API USING DJANGO
+Module 19: REST API's USING DJANGO
+```
 
-## Decisions and Rationale
+## Numbering note
 
-- This is scaffolded as a Django project because the PDF asks for all working project files.
-- The dependency note for `django-filter==2.4.0` is recorded in the README because the PDF calls it out for Lecture 11.
-- API behavior should be tested locally before packaging.
-- Database files and environment-specific settings should be handled carefully to avoid committing sensitive or machine-specific state.
+The available source PDF refers to this topic as Assignment 12 / Module 20, but the active portal task shows Assignment 9 / Module 19. The implementation will follow the portal naming while using the PDF topic and dependency notes.
 
-## Current Work Log
+## What this assignment teaches
 
-- [x] Source PDF captured.
-- [x] Folder and README scaffolded.
-- [ ] Django project pending.
-- [ ] API validation pending.
+This assignment teaches the basic structure of a Django REST API project:
 
-## Next Learning Step
+- creating a Django project;
+- creating a Django app;
+- adding Django REST Framework;
+- creating a database model;
+- making migrations;
+- creating a serializer;
+- creating API views;
+- mapping URLs;
+- testing JSON API output in the browser.
 
-Create the Django project structure, install required dependencies, and define the first API endpoint.
+## Decisions and rationale
+
+- The workspace was renamed to `assignment_09_module_19_django_rest_api` to match the portal.
+- The project will be kept beginner-friendly and simple.
+- The API will use a simple `Student` model so that the REST API concept is easy to understand.
+- Screenshots will be captured after each major step.
+- The final ZIP will be created from the assignment folder only.
+
+## Current work log
+
+- [x] Portal assignment confirmed as Assignment 9 / Module 19.
+- [x] Old scaffold renamed from Assignment 12 / Module 20 naming.
+- [x] README scaffold updated for Assignment 9.
+- [ ] Django project setup pending.
+- [ ] API implementation pending.
+- [ ] Final packaging pending.
+
+## Next learning step
+
+Create the Django project, install dependencies, and confirm that the default Django development server runs successfully.
