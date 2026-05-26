@@ -12,6 +12,7 @@ Create a simple Flask web application with a student registration form.
 - `requirements.txt` - required package list
 - `templates/register.html` - registration form page
 - `templates/success.html` - success page after valid submission
+- `static/style.css` - basic CSS styling
 - `screenshot_proofs/` - screenshots for each step
 
 ---
@@ -157,6 +158,55 @@ Screenshot proof:
 
 ---
 
+## Step 6 - Basic CSS and HTML cleanup
+
+I created a CSS file:
+
+```text
+static/style.css
+```
+
+Then I linked it in both HTML templates using:
+
+```html
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+```
+
+I also cleaned the HTML structure in `register.html` and `success.html`.
+
+The cleanup included:
+
+- adding `lang="en"` to the `<html>` tag;
+- adding `<meta charset="UTF-8">`;
+- adding the viewport meta tag;
+- connecting labels and inputs with `for` and `id`;
+- removing inline CSS from the error message;
+- using the `.error` CSS class instead;
+- adding a `.container` class for page layout.
+
+What I learned:
+
+- Flask serves static files from the `static` folder.
+- `url_for('static', filename='style.css')` correctly links CSS in Flask templates.
+- CSS keeps styling separate from HTML.
+- Proper labels improve HTML quality and accessibility.
+- Meta tags help the browser understand encoding and screen scaling.
+- VS Code Problems panel can help identify HTML warnings before submission.
+
+Screenshot proof:
+
+- [style.css code top](screenshot_proofs/step_06_basic_css_and_html_cleanup/step_06_a1_style_css_code_top.png)
+- [style.css code bottom](screenshot_proofs/step_06_basic_css_and_html_cleanup/step_06_a2_style_css_code_bottom.png)
+- [register.html cleaned code and no problems](screenshot_proofs/step_06_basic_css_and_html_cleanup/step_06_b_register_html_cleaned_code_and_no_problems.png)
+- [success.html cleaned code](screenshot_proofs/step_06_basic_css_and_html_cleanup/step_06_c_success_html_cleaned_code.png)
+- [styled registration form in browser](screenshot_proofs/step_06_basic_css_and_html_cleanup/step_06_d_styled_registration_form_browser.png)
+- [styled validation error in browser](screenshot_proofs/step_06_basic_css_and_html_cleanup/step_06_e_styled_validation_error_browser.png)
+- [styled filled form in browser](screenshot_proofs/step_06_basic_css_and_html_cleanup/step_06_f_styled_filled_form_browser.png)
+- [styled success page in browser](screenshot_proofs/step_06_basic_css_and_html_cleanup/step_06_g_styled_success_page_browser.png)
+- [register another student link back to form](screenshot_proofs/step_06_basic_css_and_html_cleanup/step_06_h_register_another_student_back_to_form.png)
+
+---
+
 ## Progress checklist
 
 - [x] Step 1: Basic Flask app and home page
@@ -164,6 +214,6 @@ Screenshot proof:
 - [x] Step 3: Read submitted form data using POST
 - [x] Step 4: Add simple validation
 - [x] Step 5: Add success page
-- [ ] Step 6: Add basic CSS
+- [x] Step 6: Add basic CSS
 - [ ] Step 7: Final testing and screenshots
 - [ ] Step 8: Final packaging
