@@ -207,6 +207,50 @@ Screenshot proof:
 
 ---
 
+## Step 7 - Final testing and screenshots
+
+I performed final testing after completing the Flask form, validation, success page, CSS styling, and HTML cleanup.
+
+The final test checked:
+
+- the registration page loads correctly;
+- the Flask server runs without crashing;
+- the form can be filled with valid student details;
+- valid form submission opens the success page;
+- the success page shows the submitted name, email, and course;
+- the Register Another Student link returns to the registration form;
+- VS Code Problems panel shows no workspace problems.
+
+Test data used:
+
+```text
+Full Name: Abhijeet Kumar
+Email: abhikr14118@gmail.com
+Course: Python Flask
+```
+
+What I learned:
+
+- Final testing should verify the complete user flow, not only individual code files.
+- Browser output and terminal output both help prove that the Flask route is working.
+- A small browser warning like missing `favicon.ico` does not stop the app from working.
+- The important test is whether the form, validation, success page, and navigation work correctly.
+- Keeping final screenshots organized makes the submission easier to review.
+
+Screenshot proof:
+
+- [final registration form loaded](screenshot_proofs/step_07_final_testing/step_07_a_final_registration_form_loaded.png)
+- [blank form with console before validation](screenshot_proofs/step_07_final_testing/step_07_b_final_blank_form_with_console_before_validation.png)
+- [filled form before submit](screenshot_proofs/step_07_final_testing/step_07_c_final_filled_form_before_submit.png)
+- [success page after submit with no issues](screenshot_proofs/step_07_final_testing/step_07_d_final_success_page_after_submit_no_issues.png)
+- [register another student returns to form](screenshot_proofs/step_07_final_testing/step_07_e_final_register_another_student_back_to_form.png)
+- [app running terminal and no problems](screenshot_proofs/step_07_final_testing/step_07_f_final_app_running_terminal_and_no_problems.png)
+- [register.html code and no problems](screenshot_proofs/step_07_final_testing/step_07_g_final_register_html_code_and_no_problems.png)
+- [success.html code and no problems](screenshot_proofs/step_07_final_testing/step_07_h_final_success_html_code_and_no_problems.png)
+- [app.py code and server output](screenshot_proofs/step_07_final_testing/step_07_i_final_app_py_code_and_server_output.png)
+
+---
+
 ## Progress checklist
 
 - [x] Step 1: Basic Flask app and home page
@@ -215,5 +259,5 @@ Screenshot proof:
 - [x] Step 4: Add simple validation
 - [x] Step 5: Add success page
 - [x] Step 6: Add basic CSS
-- [ ] Step 7: Final testing and screenshots
+- [x] Step 7: Final testing and screenshots
 - [ ] Step 8: Final packaging
