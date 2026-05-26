@@ -11,6 +11,7 @@ Create a simple Flask web application with a student registration form.
 - `app.py` - main Flask application
 - `requirements.txt` - required package list
 - `templates/register.html` - registration form page
+- `templates/success.html` - success page after valid submission
 - `screenshot_proofs/` - screenshots for each step
 
 ---
@@ -108,13 +109,61 @@ Screenshot proof:
 
 ---
 
+## Step 5 - Success page after valid registration
+
+I created a new template file:
+
+```text
+templates/success.html
+```
+
+This page is shown only after the form is submitted with valid data.
+
+In `app.py`, after successful validation, I return the success page and pass the submitted values to it:
+
+```python
+return render_template(
+    "success.html",
+    name=name,
+    email=email,
+    course=course
+)
+```
+
+The success page displays:
+
+- registration successful message;
+- submitted full name;
+- submitted email;
+- submitted course;
+- a link to register another student.
+
+What I learned:
+
+- A Flask route can return different templates depending on the situation.
+- If validation fails, the app returns `register.html` with an error message.
+- If validation passes, the app returns `success.html` with submitted details.
+- Variables passed from `app.py` can be shown in HTML using Jinja syntax like `{{ name }}`.
+- A normal link such as `<a href="/">` can take the user back to the form page.
+
+Screenshot proof:
+
+- [blank registration form before success test](screenshot_proofs/step_05_success_page/step_05_a_blank_registration_form_before_success_test.png)
+- [filled form before submit](screenshot_proofs/step_05_success_page/step_05_b_filled_form_before_submit.png)
+- [success page in browser](screenshot_proofs/step_05_success_page/step_05_c_success_page_browser.png)
+- [register another student link back to form](screenshot_proofs/step_05_success_page/step_05_d_register_another_student_link_back_to_form.png)
+- [app.py success page code and terminal](screenshot_proofs/step_05_success_page/step_05_e_app_py_success_page_code_and_terminal.png)
+- [success.html code and terminal](screenshot_proofs/step_05_success_page/step_05_f_success_html_code_and_terminal.png)
+
+---
+
 ## Progress checklist
 
 - [x] Step 1: Basic Flask app and home page
 - [x] Step 2: HTML registration form
 - [x] Step 3: Read submitted form data using POST
 - [x] Step 4: Add simple validation
-- [ ] Step 5: Add success page
+- [x] Step 5: Add success page
 - [ ] Step 6: Add basic CSS
 - [ ] Step 7: Final testing and screenshots
 - [ ] Step 8: Final packaging
