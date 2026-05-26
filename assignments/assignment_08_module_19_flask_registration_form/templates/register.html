@@ -1,26 +1,31 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Student Registration Form</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 <body>
-    <h1>Student Registration Form</h1>
+    <div class="container">
+        <h1>Student Registration Form</h1>
 
-    {% if error %}
-        <p style="color: red;">{{ error }}</p>
-    {% endif %}
+        {% if error %}
+            <p class="error">{{ error }}</p>
+        {% endif %}
 
-    <form method="POST">
-        <label>Full Name:</label><br>
-        <input type="text" name="name"><br><br>
+        <form method="POST">
+            <label for="name">Full Name:</label><br>
+            <input type="text" id="name" name="name"><br><br>
 
-        <label>Email:</label><br>
-        <input type="email" name="email"><br><br>
+            <label for="email">Email:</label><br>
+            <input type="email" id="email" name="email"><br><br>
 
-        <label>Course:</label><br>
-        <input type="text" name="course"><br><br>
+            <label for="course">Course:</label><br>
+            <input type="text" id="course" name="course"><br><br>
 
-        <button type="submit">Register</button>
-    </form>
+            <button type="submit">Register</button>
+        </form>
+    </div>
 </body>
 </html>

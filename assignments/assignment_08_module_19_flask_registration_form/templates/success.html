@@ -1,21 +1,26 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Registration Successful</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 <body>
-    <h1>Registration Successful</h1>
+    <div class="container">
+        <h1>Registration Successful</h1>
 
-    <p>The student has been registered successfully.</p>
+        <p>The student has been registered successfully.</p>
 
-    <h2>Submitted Details</h2>
+        <h2>Submitted Details</h2>
 
-    <p><strong>Full Name:</strong> {{ name }}</p>
-    <p><strong>Email:</strong> {{ email }}</p>
-    <p><strong>Course:</strong> {{ course }}</p>
+        <p><strong>Full Name:</strong> {{ name }}</p>
+        <p><strong>Email:</strong> {{ email }}</p>
+        <p><strong>Course:</strong> {{ course }}</p>
 
-    <br>
+        <br>
 
-    <a href="/">Register Another Student</a>
+        <a href="/">Register Another Student</a>
+    </div>
 </body>
 </html>
