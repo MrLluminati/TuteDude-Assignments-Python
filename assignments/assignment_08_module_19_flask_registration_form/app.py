@@ -1,5 +1,5 @@
 # Assignment 8 - Flask Registration Form
-# Step 4: Add simple form validation
+# Step 5: Show success page after valid registration
 
 from flask import Flask, render_template, request
 
@@ -22,6 +22,13 @@ def home():
             print("Name:", name)
             print("Email:", email)
             print("Course:", course)
+
+            return render_template(
+                "success.html",
+                name=name,
+                email=email,
+                course=course
+            )
 
     return render_template("register.html", error=error)
 
