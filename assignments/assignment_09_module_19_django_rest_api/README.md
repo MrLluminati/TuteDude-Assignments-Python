@@ -39,7 +39,8 @@ assignment_09_module_19_django_rest_api/
 │   ├── step_01_project_setup/
 │   ├── step_02_create_app_and_settings/
 │   ├── step_03_model_and_migration/
-│   └── step_04_serializer_and_api_view/
+│   ├── step_04_serializer_and_api_view/
+│   └── step_05_urls_and_api_testing/
 ├── student_api/
 └── students/
     ├── migrations/
@@ -47,6 +48,7 @@ assignment_09_module_19_django_rest_api/
     │   └── 0001_initial.py
     ├── models.py
     ├── serializers.py
+    ├── urls.py
     └── views.py
 ```
 
@@ -130,6 +132,43 @@ Screenshot proofs:
 - `screenshot_proofs/step_04_serializer_and_api_view/step_04_b_views_py_api_view_code.png`
 - `screenshot_proofs/step_04_serializer_and_api_view/step_04_c_manage_py_check_no_issues.png`
 
+## Step 5 - Configure URLs and test API endpoint
+
+A URL configuration file was created for the `students` app:
+
+```text
+students/urls.py
+```
+
+It maps the `students/` route to the `student_list` API view.
+
+The main project URL file was updated:
+
+```text
+student_api/urls.py
+```
+
+The app URLs were included under the `api/` path. This created the final API endpoint:
+
+```text
+http://127.0.0.1:8000/api/students/
+```
+
+The project check command was successful. Since the local SQLite database had been removed earlier, migrations were run again to recreate the local database for testing.
+
+The development server was started and the API endpoint was tested in the browser. Because no student records had been added yet, the endpoint correctly returned an empty JSON list:
+
+```json
+[]
+```
+
+Screenshot proofs:
+
+- `screenshot_proofs/step_05_urls_and_api_testing/step_05_a_students_urls_py_code.png`
+- `screenshot_proofs/step_05_urls_and_api_testing/step_05_b_main_urls_py_code.png`
+- `screenshot_proofs/step_05_urls_and_api_testing/step_05_c_manage_py_check_migrate_and_runserver_terminal.png`
+- `screenshot_proofs/step_05_urls_and_api_testing/step_05_d_api_students_empty_json_browser.png`
+
 ## Screenshot proof plan
 
 Screenshot proof folders:
@@ -150,6 +189,6 @@ step_06_final_testing/
 - [x] Step 2: Create app and update settings
 - [x] Step 3: Create model and run migrations
 - [x] Step 4: Create serializer and API view
-- [ ] Step 5: Configure URLs and test API endpoint
+- [x] Step 5: Configure URLs and test API endpoint
 - [ ] Step 6: Final testing and screenshots
 - [ ] Step 7: Final packaging
