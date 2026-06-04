@@ -14,7 +14,7 @@ The available source PDF appears to use older numbering, but the portal shows th
 
 Build a simple Django REST API project and test it locally.
 
-The implementation will cover creating a Django project, creating a Django app, adding Django REST Framework, creating a model, creating a serializer, creating API endpoints, running migrations, testing the API, taking screenshots, and packaging the final project.
+The implementation covers creating a Django project, creating a Django app, adding Django REST Framework, creating a model, creating a serializer, creating API endpoints, running migrations, testing the API, taking screenshots, and packaging the final project.
 
 ## Dependency note
 
@@ -40,7 +40,8 @@ assignment_09_module_19_django_rest_api/
 │   ├── step_02_create_app_and_settings/
 │   ├── step_03_model_and_migration/
 │   ├── step_04_serializer_and_api_view/
-│   └── step_05_urls_and_api_testing/
+│   ├── step_05_urls_and_api_testing/
+│   └── step_06_final_testing/
 ├── student_api/
 └── students/
     ├── migrations/
@@ -107,22 +108,13 @@ Screenshot proofs:
 
 ## Step 4 - Create serializer and API view
 
-A serializer file was created at:
-
-```text
-students/serializers.py
-```
+A serializer file was created at `students/serializers.py`.
 
 The `StudentSerializer` class was created using Django REST Framework's `ModelSerializer`. It converts `Student` model objects into JSON data for API responses.
 
 The `students/views.py` file was updated with a simple API view named `student_list`.
 
-The view:
-
-- accepts GET requests;
-- reads all student records using `Student.objects.all()`;
-- converts the records into JSON using `StudentSerializer`;
-- returns the serialized data as a REST API response.
+The view accepts GET requests, reads all student records, converts the records into JSON using `StudentSerializer`, and returns the serialized data as a REST API response.
 
 The project check command ran successfully after these changes.
 
@@ -134,33 +126,13 @@ Screenshot proofs:
 
 ## Step 5 - Configure URLs and test API endpoint
 
-A URL configuration file was created for the `students` app:
+A URL configuration file was created for the `students` app at `students/urls.py`. It maps the `students/` route to the `student_list` API view.
 
-```text
-students/urls.py
-```
-
-It maps the `students/` route to the `student_list` API view.
-
-The main project URL file was updated:
-
-```text
-student_api/urls.py
-```
-
-The app URLs were included under the `api/` path. This created the final API endpoint:
-
-```text
-http://127.0.0.1:8000/api/students/
-```
+The main project URL file `student_api/urls.py` was updated to include the app URLs under the `api/` path. This created the final API endpoint: `http://127.0.0.1:8000/api/students/`.
 
 The project check command was successful. Since the local SQLite database had been removed earlier, migrations were run again to recreate the local database for testing.
 
-The development server was started and the API endpoint was tested in the browser. Because no student records had been added yet, the endpoint correctly returned an empty JSON list:
-
-```json
-[]
-```
+The development server was started and the API endpoint was tested in the browser. Because no student records had been added yet, the endpoint correctly returned an empty JSON list.
 
 Screenshot proofs:
 
@@ -168,6 +140,23 @@ Screenshot proofs:
 - `screenshot_proofs/step_05_urls_and_api_testing/step_05_b_main_urls_py_code.png`
 - `screenshot_proofs/step_05_urls_and_api_testing/step_05_c_manage_py_check_migrate_and_runserver_terminal.png`
 - `screenshot_proofs/step_05_urls_and_api_testing/step_05_d_api_students_empty_json_browser.png`
+
+## Step 6 - Final testing
+
+Final testing was completed by recreating the local SQLite database with migrations and running the Django development server again.
+
+The endpoint `http://127.0.0.1:8000/api/students/` was opened in the browser. The Django REST Framework browsable API loaded successfully. The GET request returned HTTP 200 OK and displayed the expected empty JSON list.
+
+The OPTIONS request was also tested and returned endpoint metadata successfully.
+
+After final testing, the generated local `db.sqlite3` file was removed before committing because it is a local runtime database file.
+
+Screenshot proofs:
+
+- `screenshot_proofs/step_06_final_testing/step_06_a_final_project_structure_and_runserver_terminal.png`
+- `screenshot_proofs/step_06_final_testing/step_06_b_final_api_students_get_empty_json.png`
+- `screenshot_proofs/step_06_final_testing/step_06_c_final_api_students_options_response.png`
+- `screenshot_proofs/step_06_final_testing/step_06_d_final_api_students_get_confirmed.png`
 
 ## Screenshot proof plan
 
@@ -190,5 +179,5 @@ step_06_final_testing/
 - [x] Step 3: Create model and run migrations
 - [x] Step 4: Create serializer and API view
 - [x] Step 5: Configure URLs and test API endpoint
-- [ ] Step 6: Final testing and screenshots
+- [x] Step 6: Final testing and screenshots
 - [ ] Step 7: Final packaging
