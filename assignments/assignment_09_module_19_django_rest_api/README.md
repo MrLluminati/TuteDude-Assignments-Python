@@ -38,13 +38,16 @@ assignment_09_module_19_django_rest_api/
 ├── screenshot_proofs/
 │   ├── step_01_project_setup/
 │   ├── step_02_create_app_and_settings/
-│   └── step_03_model_and_migration/
+│   ├── step_03_model_and_migration/
+│   └── step_04_serializer_and_api_view/
 ├── student_api/
 └── students/
     ├── migrations/
     │   ├── __init__.py
     │   └── 0001_initial.py
-    └── models.py
+    ├── models.py
+    ├── serializers.py
+    └── views.py
 ```
 
 ## Step 1 - Django project setup
@@ -87,25 +90,9 @@ The model fields are:
 
 The model also includes a `__str__` method so that each student object displays by its name.
 
-Migrations were created using:
+Migrations were created using `python .\manage.py makemigrations`, which created `students/migrations/0001_initial.py`.
 
-```powershell
-python .\manage.py makemigrations
-```
-
-The command created:
-
-```text
-students/migrations/0001_initial.py
-```
-
-Migrations were applied using:
-
-```powershell
-python .\manage.py migrate
-```
-
-The migration output showed that Django's default migrations and the new `students.0001_initial` migration were applied successfully.
+Migrations were applied using `python .\manage.py migrate`. Django's default migrations and the new `students.0001_initial` migration were applied successfully.
 
 Note: running migrations creates a local `db.sqlite3` file. This file is not committed because it is a local generated database file.
 
@@ -115,6 +102,33 @@ Screenshot proofs:
 - `screenshot_proofs/step_03_model_and_migration/step_03_b_makemigrations_terminal.png`
 - `screenshot_proofs/step_03_model_and_migration/step_03_c_migrate_terminal.png`
 - `screenshot_proofs/step_03_model_and_migration/step_03_d_migration_file_created.png`
+
+## Step 4 - Create serializer and API view
+
+A serializer file was created at:
+
+```text
+students/serializers.py
+```
+
+The `StudentSerializer` class was created using Django REST Framework's `ModelSerializer`. It converts `Student` model objects into JSON data for API responses.
+
+The `students/views.py` file was updated with a simple API view named `student_list`.
+
+The view:
+
+- accepts GET requests;
+- reads all student records using `Student.objects.all()`;
+- converts the records into JSON using `StudentSerializer`;
+- returns the serialized data as a REST API response.
+
+The project check command ran successfully after these changes.
+
+Screenshot proofs:
+
+- `screenshot_proofs/step_04_serializer_and_api_view/step_04_a_serializers_py_code.png`
+- `screenshot_proofs/step_04_serializer_and_api_view/step_04_b_views_py_api_view_code.png`
+- `screenshot_proofs/step_04_serializer_and_api_view/step_04_c_manage_py_check_no_issues.png`
 
 ## Screenshot proof plan
 
@@ -135,7 +149,7 @@ step_06_final_testing/
 - [x] Step 1: Create Django project and install dependencies
 - [x] Step 2: Create app and update settings
 - [x] Step 3: Create model and run migrations
-- [ ] Step 4: Create serializer and API view
+- [x] Step 4: Create serializer and API view
 - [ ] Step 5: Configure URLs and test API endpoint
 - [ ] Step 6: Final testing and screenshots
 - [ ] Step 7: Final packaging
