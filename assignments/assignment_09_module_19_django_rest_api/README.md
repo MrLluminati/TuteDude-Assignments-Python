@@ -37,9 +37,14 @@ assignment_09_module_19_django_rest_api/
 ├── README.md
 ├── screenshot_proofs/
 │   ├── step_01_project_setup/
-│   └── step_02_create_app_and_settings/
+│   ├── step_02_create_app_and_settings/
+│   └── step_03_model_and_migration/
 ├── student_api/
 └── students/
+    ├── migrations/
+    │   ├── __init__.py
+    │   └── 0001_initial.py
+    └── models.py
 ```
 
 ## Step 1 - Django project setup
@@ -70,6 +75,47 @@ Screenshot proofs:
 - `screenshot_proofs/step_02_create_app_and_settings/step_02_b_settings_py_installed_apps_code.png`
 - `screenshot_proofs/step_02_create_app_and_settings/step_02_c_django_filter_fix_and_manage_py_check.png`
 
+## Step 3 - Create Student model and run migrations
+
+A simple `Student` model was created in `students/models.py`.
+
+The model fields are:
+
+- `name`: stores the student name as text.
+- `age`: stores the student age as an integer.
+- `course`: stores the course name as text.
+
+The model also includes a `__str__` method so that each student object displays by its name.
+
+Migrations were created using:
+
+```powershell
+python .\manage.py makemigrations
+```
+
+The command created:
+
+```text
+students/migrations/0001_initial.py
+```
+
+Migrations were applied using:
+
+```powershell
+python .\manage.py migrate
+```
+
+The migration output showed that Django's default migrations and the new `students.0001_initial` migration were applied successfully.
+
+Note: running migrations creates a local `db.sqlite3` file. This file is not committed because it is a local generated database file.
+
+Screenshot proofs:
+
+- `screenshot_proofs/step_03_model_and_migration/step_03_a_student_model_code.png`
+- `screenshot_proofs/step_03_model_and_migration/step_03_b_makemigrations_terminal.png`
+- `screenshot_proofs/step_03_model_and_migration/step_03_c_migrate_terminal.png`
+- `screenshot_proofs/step_03_model_and_migration/step_03_d_migration_file_created.png`
+
 ## Screenshot proof plan
 
 Screenshot proof folders:
@@ -88,7 +134,7 @@ step_06_final_testing/
 - [x] Step 0: Rename workspace from old scaffold to portal Assignment 9 naming
 - [x] Step 1: Create Django project and install dependencies
 - [x] Step 2: Create app and update settings
-- [ ] Step 3: Create model and run migrations
+- [x] Step 3: Create model and run migrations
 - [ ] Step 4: Create serializer and API view
 - [ ] Step 5: Configure URLs and test API endpoint
 - [ ] Step 6: Final testing and screenshots
