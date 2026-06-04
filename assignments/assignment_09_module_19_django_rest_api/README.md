@@ -4,80 +4,75 @@ This assignment is being implemented fresh in a beginner-friendly, step-wise man
 
 ## Portal task
 
-```text
-Assignment 9
-Implementation of REST API USING DJANGO
-Module 19: REST API's USING DJANGO
-```
+Assignment 9 - Implementation of REST API USING DJANGO - Module 19.
 
-## Note about numbering mismatch
+## Numbering note
 
-The available source PDF in the repository is named as a later/older assignment document and mentions:
-
-```text
-Assignment 12: Module 20 - Implementing REST API Using Django
-```
-
-However, the portal shows this task as Assignment 9 under Module 19. Therefore, this workspace follows the portal naming:
-
-```text
-assignments/assignment_09_module_19_django_rest_api
-```
-
-The topic remains the same: building and testing a Django REST API.
+The available source PDF appears to use older numbering, but the portal shows this work as Assignment 9 under Module 19. This folder therefore follows the portal naming: `assignment_09_module_19_django_rest_api`.
 
 ## Project goal
 
 Build a simple Django REST API project and test it locally.
 
-The beginner-friendly implementation will cover:
+The implementation will cover creating a Django project, creating a Django app, adding Django REST Framework, creating a model, creating a serializer, creating API endpoints, running migrations, testing the API, taking screenshots, and packaging the final project.
 
-- creating a Django project;
-- creating a Django app;
-- adding Django REST Framework;
-- creating a simple model;
-- creating a serializer;
-- creating API views/endpoints;
-- running migrations;
-- testing API output in the browser/API endpoint;
-- taking step-wise screenshots;
-- packaging the final project as a ZIP file.
+## Dependency note
 
-## Important dependency note
+The source assignment document mentioned `django-filter==2.4.0`. During implementation, that old version caused an import compatibility error with the installed Django version. Therefore, `django-filter` was upgraded to a compatible current version and the requirements file was updated accordingly.
 
-The source assignment document specifically mentions:
+Current `requirements.txt` contains:
 
 ```text
-django-filter==2.4.0
+Django
+djangorestframework
+django-filter
 ```
 
-So this project will include that dependency along with Django and Django REST Framework.
-
-## Expected final files/folders
-
-The final project will include files such as:
+## Current structure
 
 ```text
-app-level files
-manage.py
-requirements.txt
-README.md
-screenshot_proofs/
-student_api/
-students/
+assignment_09_module_19_django_rest_api/
+├── manage.py
+├── requirements.txt
+├── README.md
+├── screenshot_proofs/
+│   ├── step_01_project_setup/
+│   └── step_02_create_app_and_settings/
+├── student_api/
+└── students/
 ```
 
-Exact folder names may vary slightly depending on the Django project/app names used during implementation.
+## Step 1 - Django project setup
+
+The initial Django project was created successfully. The development server was tested locally and the default Django success page opened in the browser.
+
+Screenshot proofs:
+
+- `screenshot_proofs/step_01_project_setup/step_01_a_project_files_and_runserver_start.png`
+- `screenshot_proofs/step_01_project_setup/step_01_b_runserver_terminal_success.png`
+- `screenshot_proofs/step_01_project_setup/step_01_c_django_default_page_browser.png`
+
+## Step 2 - Create app and update settings
+
+A Django app named `students` was created using `python manage.py startapp students`.
+
+The project settings were updated to include:
+
+- `rest_framework`
+- `django_filters`
+- `students`
+
+After fixing the django-filter compatibility issue, `python manage.py check` ran successfully and returned no issues.
+
+Screenshot proofs:
+
+- `screenshot_proofs/step_02_create_app_and_settings/step_02_a_students_app_created_terminal_and_files.png`
+- `screenshot_proofs/step_02_create_app_and_settings/step_02_b_settings_py_installed_apps_code.png`
+- `screenshot_proofs/step_02_create_app_and_settings/step_02_c_django_filter_fix_and_manage_py_check.png`
 
 ## Screenshot proof plan
 
-Screenshots will be saved step-wise inside:
-
-```text
-screenshot_proofs/
-```
-
-Planned proof folders:
+Screenshot proof folders:
 
 ```text
 step_01_project_setup/
@@ -91,8 +86,8 @@ step_06_final_testing/
 ## Progress checklist
 
 - [x] Step 0: Rename workspace from old scaffold to portal Assignment 9 naming
-- [ ] Step 1: Create Django project and install dependencies
-- [ ] Step 2: Create app and update settings
+- [x] Step 1: Create Django project and install dependencies
+- [x] Step 2: Create app and update settings
 - [ ] Step 3: Create model and run migrations
 - [ ] Step 4: Create serializer and API view
 - [ ] Step 5: Configure URLs and test API endpoint
