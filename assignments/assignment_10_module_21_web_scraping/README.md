@@ -29,6 +29,7 @@ This site is specifically designed for learning and practicing web scraping.
 ```text
 assignment_10_module_21_web_scraping/
 ├── data/
+│   ├── all_quotes.csv
 │   └── quotes_page_1.csv
 ├── requirements.txt
 ├── README.md
@@ -36,12 +37,14 @@ assignment_10_module_21_web_scraping/
 │   ├── step_01_project_setup/
 │   ├── step_02_fetch_webpage/
 │   ├── step_03_parse_html/
-│   └── step_04_scrape_quotes_to_csv/
+│   ├── step_04_scrape_quotes_to_csv/
+│   └── step_05_pagination_scraping/
 └── scripts/
     ├── step_01_test_setup.py
     ├── step_02_fetch_webpage.py
     ├── step_03_parse_html.py
-    └── step_04_scrape_quotes_to_csv.py
+    ├── step_04_scrape_quotes_to_csv.py
+    └── step_05_pagination_scraping.py
 ```
 
 ## Dependencies
@@ -170,6 +173,46 @@ Screenshot proofs:
 - `screenshot_proofs/step_04_scrape_quotes_to_csv/step_04_a_scrape_quotes_to_csv_script_code.png`
 - `screenshot_proofs/step_04_scrape_quotes_to_csv/step_04_b_terminal_output_csv_created_and_preview.png`
 
+## Step 5 - Scrape multiple pages using pagination
+
+A new script was created at:
+
+```text
+scripts/step_05_pagination_scraping.py
+```
+
+The script starts from page 1 of `https://quotes.toscrape.com/` and follows the `Next` pagination link until no next page is available.
+
+For each page, the script extracts:
+
+- Quote text.
+- Author name.
+- Tags.
+- Page number.
+
+The extracted data from all pages is stored in a pandas DataFrame and exported to:
+
+```text
+data/all_quotes.csv
+```
+
+The script was executed successfully and scraped all `10` pages. The final output confirmed:
+
+```text
+Total quotes scraped: 100
+Total pages scraped: 10
+CSV file saved at: data/all_quotes.csv
+```
+
+Screenshot proofs:
+
+- `screenshot_proofs/step_05_pagination_scraping/step_05_a_pagination_scraping_script_code_top.png`
+- `screenshot_proofs/step_05_pagination_scraping/step_05_b_pagination_scraping_script_code_bottom.png`
+- `screenshot_proofs/step_05_pagination_scraping/step_05_c_pagination_terminal_output_and_csv_creation.png`
+- `screenshot_proofs/step_05_pagination_scraping/step_05_d_all_quotes_csv_preview_part_1.png`
+- `screenshot_proofs/step_05_pagination_scraping/step_05_e_all_quotes_csv_preview_part_2.png`
+- `screenshot_proofs/step_05_pagination_scraping/step_05_f_all_quotes_csv_preview_part_3.png`
+
 ## Screenshot proof plan
 
 Screenshot proof folders:
@@ -189,6 +232,6 @@ step_06_final_testing/
 - [x] Step 2: Fetch webpage using requests
 - [x] Step 3: Parse HTML using BeautifulSoup
 - [x] Step 4: Scrape quote data and save to CSV
-- [ ] Step 5: Scrape multiple pages using pagination
+- [x] Step 5: Scrape multiple pages using pagination
 - [ ] Step 6: Final testing and screenshots
 - [ ] Step 7: Final packaging
