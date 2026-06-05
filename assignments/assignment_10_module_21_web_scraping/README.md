@@ -33,10 +33,12 @@ assignment_10_module_21_web_scraping/
 ├── README.md
 ├── screenshot_proofs/
 │   ├── step_01_project_setup/
-│   └── step_02_fetch_webpage/
+│   ├── step_02_fetch_webpage/
+│   └── step_03_parse_html/
 └── scripts/
     ├── step_01_test_setup.py
-    └── step_02_fetch_webpage.py
+    ├── step_02_fetch_webpage.py
+    └── step_03_parse_html.py
 ```
 
 ## Dependencies
@@ -111,6 +113,31 @@ Screenshot proofs:
 - `screenshot_proofs/step_02_fetch_webpage/step_02_a_fetch_webpage_script_code.png`
 - `screenshot_proofs/step_02_fetch_webpage/step_02_b_fetch_webpage_terminal_success_and_project_structure.png`
 
+## Step 3 - Parse HTML using BeautifulSoup
+
+A new script was created at:
+
+```text
+scripts/step_03_parse_html.py
+```
+
+The script uses `requests` to fetch the webpage and `BeautifulSoup` to parse the returned HTML.
+
+The script extracts and prints:
+
+- Page title.
+- First heading.
+- Number of quote blocks found on the page.
+- First quote text.
+- First quote author.
+
+The script was executed successfully and found `10` quote blocks on the first page. It also extracted the first quote and author from the parsed HTML.
+
+Screenshot proofs:
+
+- `screenshot_proofs/step_03_parse_html/step_03_a_parse_html_script_code.png`
+- `screenshot_proofs/step_03_parse_html/step_03_b_parse_html_terminal_output_and_project_structure.png`
+
 ## Screenshot proof plan
 
 Screenshot proof folders:
@@ -128,7 +155,7 @@ step_06_final_testing/
 
 - [x] Step 1: Project setup and dependency test
 - [x] Step 2: Fetch webpage using requests
-- [ ] Step 3: Parse HTML using BeautifulSoup
+- [x] Step 3: Parse HTML using BeautifulSoup
 - [ ] Step 4: Scrape quote data and save to CSV
 - [ ] Step 5: Scrape multiple pages using pagination
 - [ ] Step 6: Final testing and screenshots
