@@ -29,16 +29,19 @@ This site is specifically designed for learning and practicing web scraping.
 ```text
 assignment_10_module_21_web_scraping/
 ├── data/
+│   └── quotes_page_1.csv
 ├── requirements.txt
 ├── README.md
 ├── screenshot_proofs/
 │   ├── step_01_project_setup/
 │   ├── step_02_fetch_webpage/
-│   └── step_03_parse_html/
+│   ├── step_03_parse_html/
+│   └── step_04_scrape_quotes_to_csv/
 └── scripts/
     ├── step_01_test_setup.py
     ├── step_02_fetch_webpage.py
-    └── step_03_parse_html.py
+    ├── step_03_parse_html.py
+    └── step_04_scrape_quotes_to_csv.py
 ```
 
 ## Dependencies
@@ -138,6 +141,35 @@ Screenshot proofs:
 - `screenshot_proofs/step_03_parse_html/step_03_a_parse_html_script_code.png`
 - `screenshot_proofs/step_03_parse_html/step_03_b_parse_html_terminal_output_and_project_structure.png`
 
+## Step 4 - Scrape quote data and save to CSV
+
+A new script was created at:
+
+```text
+scripts/step_04_scrape_quotes_to_csv.py
+```
+
+The script fetches the first page of `https://quotes.toscrape.com/`, parses the HTML with BeautifulSoup, and extracts structured quote data.
+
+For each quote block, the script extracts:
+
+- Quote text.
+- Author name.
+- Tags.
+
+The extracted data is stored in a pandas DataFrame and exported to:
+
+```text
+data/quotes_page_1.csv
+```
+
+The script was executed successfully and scraped `10` quotes from page 1. The terminal output also verified that the CSV file was created and displayed the first few CSV rows.
+
+Screenshot proofs:
+
+- `screenshot_proofs/step_04_scrape_quotes_to_csv/step_04_a_scrape_quotes_to_csv_script_code.png`
+- `screenshot_proofs/step_04_scrape_quotes_to_csv/step_04_b_terminal_output_csv_created_and_preview.png`
+
 ## Screenshot proof plan
 
 Screenshot proof folders:
@@ -156,7 +188,7 @@ step_06_final_testing/
 - [x] Step 1: Project setup and dependency test
 - [x] Step 2: Fetch webpage using requests
 - [x] Step 3: Parse HTML using BeautifulSoup
-- [ ] Step 4: Scrape quote data and save to CSV
+- [x] Step 4: Scrape quote data and save to CSV
 - [ ] Step 5: Scrape multiple pages using pagination
 - [ ] Step 6: Final testing and screenshots
 - [ ] Step 7: Final packaging
