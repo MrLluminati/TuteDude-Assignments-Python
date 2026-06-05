@@ -32,9 +32,11 @@ assignment_10_module_21_web_scraping/
 ├── requirements.txt
 ├── README.md
 ├── screenshot_proofs/
-│   └── step_01_project_setup/
+│   ├── step_01_project_setup/
+│   └── step_02_fetch_webpage/
 └── scripts/
-    └── step_01_test_setup.py
+    ├── step_01_test_setup.py
+    └── step_02_fetch_webpage.py
 ```
 
 ## Dependencies
@@ -80,6 +82,35 @@ Screenshot proofs:
 - `screenshot_proofs/step_01_project_setup/step_01_c_setup_test_script_code.png`
 - `screenshot_proofs/step_01_project_setup/step_01_d_pip_install_and_setup_test_success_terminal.png`
 
+## Step 2 - Fetch webpage using requests
+
+A new script was created at:
+
+```text
+scripts/step_02_fetch_webpage.py
+```
+
+The script uses the `requests` library to send a GET request to:
+
+```text
+https://quotes.toscrape.com/
+```
+
+The script prints:
+
+- Target URL.
+- HTTP status code.
+- Content type.
+- Length of the returned HTML page.
+- Success/failure message.
+
+The script was executed successfully. The response returned HTTP status code `200`, content type `text/html; charset=utf-8`, and confirmed that the webpage was fetched successfully.
+
+Screenshot proofs:
+
+- `screenshot_proofs/step_02_fetch_webpage/step_02_a_fetch_webpage_script_code.png`
+- `screenshot_proofs/step_02_fetch_webpage/step_02_b_fetch_webpage_terminal_success_and_project_structure.png`
+
 ## Screenshot proof plan
 
 Screenshot proof folders:
@@ -96,7 +127,7 @@ step_06_final_testing/
 ## Progress checklist
 
 - [x] Step 1: Project setup and dependency test
-- [ ] Step 2: Fetch webpage using requests
+- [x] Step 2: Fetch webpage using requests
 - [ ] Step 3: Parse HTML using BeautifulSoup
 - [ ] Step 4: Scrape quote data and save to CSV
 - [ ] Step 5: Scrape multiple pages using pagination
