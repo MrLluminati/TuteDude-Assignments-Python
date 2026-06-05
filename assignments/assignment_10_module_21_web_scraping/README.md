@@ -12,7 +12,7 @@ This assignment is being implemented in a beginner-friendly, step-wise manner.
 
 Build a practical Web Scraping project using Python.
 
-The implementation will cover environment setup, installing scraping dependencies, fetching web pages, parsing HTML, extracting data, saving scraped data into CSV files, handling multiple pages, documenting each step, and packaging the final submission ZIP.
+The implementation covers environment setup, installing scraping dependencies, fetching web pages, parsing HTML, extracting data, saving scraped data into CSV files, handling multiple pages, documenting each step, final testing, and packaging the final submission ZIP.
 
 ## Practice website
 
@@ -38,7 +38,8 @@ assignment_10_module_21_web_scraping/
 │   ├── step_02_fetch_webpage/
 │   ├── step_03_parse_html/
 │   ├── step_04_scrape_quotes_to_csv/
-│   └── step_05_pagination_scraping/
+│   ├── step_05_pagination_scraping/
+│   └── step_06_final_testing/
 └── scripts/
     ├── step_01_test_setup.py
     ├── step_02_fetch_webpage.py
@@ -213,9 +214,35 @@ Screenshot proofs:
 - `screenshot_proofs/step_05_pagination_scraping/step_05_e_all_quotes_csv_preview_part_2.png`
 - `screenshot_proofs/step_05_pagination_scraping/step_05_f_all_quotes_csv_preview_part_3.png`
 
-## Screenshot proof plan
+## Step 6 - Final testing and verification
 
-Screenshot proof folders:
+All scripts were run again from the assignment folder to verify the full project workflow:
+
+```powershell
+python ".\scripts\step_01_test_setup.py"
+python ".\scripts\step_02_fetch_webpage.py"
+python ".\scripts\step_03_parse_html.py"
+python ".\scripts\step_04_scrape_quotes_to_csv.py"
+python ".\scripts\step_05_pagination_scraping.py"
+```
+
+Final testing verified:
+
+- All scripts execute successfully.
+- `quotes_page_1.csv` is generated.
+- `all_quotes.csv` is generated.
+- `quotes_page_1.csv` contains `11` rows including header.
+- `all_quotes.csv` contains `101` rows including header.
+- Final project folders are present: `data`, `scripts`, and `screenshot_proofs`.
+
+Screenshot proofs:
+
+- `screenshot_proofs/step_06_final_testing/step_06_a_all_scripts_final_run_terminal_start.png`
+- `screenshot_proofs/step_06_final_testing/step_06_b_all_scripts_final_run_terminal_completed.png`
+- `screenshot_proofs/step_06_final_testing/step_06_c_data_files_csv_preview_and_row_counts.png`
+- `screenshot_proofs/step_06_final_testing/step_06_d_final_project_structure_scripts_data_screenshots.png`
+
+## Screenshot proof folders
 
 ```text
 step_01_project_setup/
@@ -233,5 +260,5 @@ step_06_final_testing/
 - [x] Step 3: Parse HTML using BeautifulSoup
 - [x] Step 4: Scrape quote data and save to CSV
 - [x] Step 5: Scrape multiple pages using pagination
-- [ ] Step 6: Final testing and screenshots
+- [x] Step 6: Final testing and screenshots
 - [ ] Step 7: Final packaging
