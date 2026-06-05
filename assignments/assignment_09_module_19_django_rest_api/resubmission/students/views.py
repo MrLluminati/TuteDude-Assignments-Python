@@ -1,12 +1,14 @@
-from rest_framework.decorators import api_view
-from rest_framework.response import Response
+from rest_framework import generics
 
 from .models import Student
 from .serializers import StudentSerializer
 
 
-@api_view(["GET"])
-def student_list(request):
-    students = Student.objects.all()
-    serializer = StudentSerializer(students, many=True)
-    return Response(serializer.data)
+class StudentListCreateView(generics.ListCreateAPIView):
+    queryset = Student.objects.all()
+    serializer_class = StudentSerializer
+
+
+class StudentDetailView(generics.RetrieveUpdateDestroyAPIView):
+    queryset = Student.objects.all()
+    serializer_class = StudentSerializer
