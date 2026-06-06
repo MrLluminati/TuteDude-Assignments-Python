@@ -1,0 +1,22 @@
+Formal Note Regarding Resubmission
+
+This is a resubmission of Assignment 10: Web Scraping.
+
+In the first submission, I implemented a complete beginner-friendly web scraping project using requests, BeautifulSoup, pandas, pagination, CSV export, README documentation, and screenshot proofs. However, after receiving the mentor feedback, I understood that the expected task was specifically to scrape an Amazon product page, extract the product price, convert the scraped price into a numeric value, compare it with a target price, and display the comparison result.
+
+I respectfully submit that the assignment document available to me only mentioned 'Web Scraping module Implementation' and did not clearly specify the Amazon product price comparison requirement. Therefore, the first submission was prepared as a general web scraping implementation based on the module topic.
+
+For this resubmission, I have reworked the project to directly address the mentor feedback. The resubmission now contains a beginner-level Amazon product price checker that:
+
+1. accepts an Amazon product URL,
+2. accepts a target price,
+3. fetches the product page using requests,
+4. parses the HTML using BeautifulSoup,
+5. extracts the product title and price where available,
+6. cleans and converts the price into a numeric value,
+7. compares the scraped price with the target price, and
+8. prints a clear result message.
+
+The implementation is intentionally kept simple and beginner-friendly to reflect my own understanding of the web scraping concepts taught in the module.
+
+Note: Amazon may sometimes block automated requests or change its page structure. Therefore, the script includes basic error handling and prints a clear message if the product title or price cannot be extracted.
