@@ -1,6 +1,6 @@
 # Assignment 10: Module 21 - Web Scraping Module Implementation
 
-This assignment is being implemented in a beginner-friendly, step-wise manner.
+This folder now contains both the original submitted version and the revised resubmission version of Assignment 10.
 
 ## Source PDF
 
@@ -8,257 +8,97 @@ This assignment is being implemented in a beginner-friendly, step-wise manner.
 ../../resources/source_pdfs/ASSIGNMENT 13.docx.pdf
 ```
 
-## Project goal
+## Assignment document note
 
-Build a practical Web Scraping project using Python.
+The assignment document available to the learner broadly mentioned Web Scraping module implementation and submission of working project files. It did not expressly mention that the implementation must specifically scrape an Amazon product page, extract product price, convert the price into a numeric value, compare it with a target price, and print a comparison result.
 
-The implementation covers environment setup, installing scraping dependencies, fetching web pages, parsing HTML, extracting data, saving scraped data into CSV files, handling multiple pages, documenting each step, final testing, and packaging the final submission ZIP.
+After mentor feedback, the project is being revised to directly address the expected Amazon product price comparison requirement.
 
-## Practice website
-
-The project uses the public practice scraping website:
-
-```text
-https://quotes.toscrape.com/
-```
-
-This site is specifically designed for learning and practicing web scraping.
-
-## Current structure
+## Current folder structure
 
 ```text
 assignment_10_module_21_web_scraping/
-├── data/
-│   ├── all_quotes.csv
-│   └── quotes_page_1.csv
-├── requirements.txt
 ├── README.md
-├── screenshot_proofs/
-│   ├── step_01_project_setup/
-│   ├── step_02_fetch_webpage/
-│   ├── step_03_parse_html/
-│   ├── step_04_scrape_quotes_to_csv/
-│   ├── step_05_pagination_scraping/
-│   └── step_06_final_testing/
-└── scripts/
-    ├── step_01_test_setup.py
-    ├── step_02_fetch_webpage.py
-    ├── step_03_parse_html.py
-    ├── step_04_scrape_quotes_to_csv.py
-    └── step_05_pagination_scraping.py
+├── original_submission/
+│   ├── data/
+│   ├── requirements.txt
+│   ├── screenshot_proofs/
+│   └── scripts/
+└── resubmission/
+    ├── data/
+    ├── NOTE_TO_MENTOR.txt
+    ├── requirements.txt
+    ├── screenshot_proofs/
+    └── scripts/
 ```
 
-## Dependencies
+## Folder purpose
 
-The project uses:
+### `original_submission/`
 
-```text
-requests
-beautifulsoup4
-pandas
-```
+This folder preserves the first submitted version of Assignment 10.
 
-These are listed in `requirements.txt`.
+The original submission included a complete beginner-friendly general web scraping project using:
 
-## Step 1 - Project setup and dependency test
+- `requests`
+- `BeautifulSoup`
+- `pandas`
+- webpage fetching
+- HTML parsing
+- quote scraping
+- CSV export
+- pagination scraping
+- final testing screenshots
 
-The initial project folders were created:
-
-- `data/` for output files such as CSV data.
-- `scripts/` for Python scraping scripts.
-- `screenshot_proofs/` for evidence screenshots.
-
-A `requirements.txt` file was created with the required packages.
-
-A setup test script was created at:
-
-```text
-scripts/step_01_test_setup.py
-```
-
-The first run showed that `requests` was not installed in the active Python environment. The dependencies were then installed using:
-
-```powershell
-pip install -r requirements.txt
-```
-
-After installation, the setup test script ran successfully and confirmed that `requests`, `BeautifulSoup`, and `pandas` were available.
-
-Screenshot proofs:
-
-- `screenshot_proofs/step_01_project_setup/step_01_a_project_folders_created_and_initial_error_terminal.png`
-- `screenshot_proofs/step_01_project_setup/step_01_b_requirements_txt_code.png`
-- `screenshot_proofs/step_01_project_setup/step_01_c_setup_test_script_code.png`
-- `screenshot_proofs/step_01_project_setup/step_01_d_pip_install_and_setup_test_success_terminal.png`
-
-## Step 2 - Fetch webpage using requests
-
-A new script was created at:
-
-```text
-scripts/step_02_fetch_webpage.py
-```
-
-The script uses the `requests` library to send a GET request to:
+The original project scraped data from:
 
 ```text
 https://quotes.toscrape.com/
 ```
 
-The script prints:
-
-- Target URL.
-- HTTP status code.
-- Content type.
-- Length of the returned HTML page.
-- Success/failure message.
-
-The script was executed successfully. The response returned HTTP status code `200`, content type `text/html; charset=utf-8`, and confirmed that the webpage was fetched successfully.
-
-Screenshot proofs:
-
-- `screenshot_proofs/step_02_fetch_webpage/step_02_a_fetch_webpage_script_code.png`
-- `screenshot_proofs/step_02_fetch_webpage/step_02_b_fetch_webpage_terminal_success_and_project_structure.png`
-
-## Step 3 - Parse HTML using BeautifulSoup
-
-A new script was created at:
+It produced:
 
 ```text
-scripts/step_03_parse_html.py
+original_submission/data/quotes_page_1.csv
+original_submission/data/all_quotes.csv
 ```
 
-The script uses `requests` to fetch the webpage and `BeautifulSoup` to parse the returned HTML.
+### `resubmission/`
 
-The script extracts and prints:
+This folder contains the revised project prepared after mentor feedback.
 
-- Page title.
-- First heading.
-- Number of quote blocks found on the page.
-- First quote text.
-- First quote author.
+The resubmission is being built as a beginner-level Amazon product price checker. It is intended to implement the specific feedback requirement:
 
-The script was executed successfully and found `10` quote blocks on the first page. It also extracted the first quote and author from the parsed HTML.
+- accept an Amazon product URL;
+- accept a target price;
+- fetch the Amazon product page using `requests`;
+- parse HTML using `BeautifulSoup`;
+- extract the product title and price where available;
+- clean the price text;
+- convert the price into a numeric value;
+- compare the scraped price with the target price;
+- print a clear result message.
 
-Screenshot proofs:
+## Important technical note
 
-- `screenshot_proofs/step_03_parse_html/step_03_a_parse_html_script_code.png`
-- `screenshot_proofs/step_03_parse_html/step_03_b_parse_html_terminal_output_and_project_structure.png`
+Amazon may sometimes block automated requests or change its HTML page structure. Therefore, the resubmission script will be kept beginner-friendly and will include basic error handling so that it prints a clear message if the product title or price cannot be extracted.
 
-## Step 4 - Scrape quote data and save to CSV
+## Resubmission note
 
-A new script was created at:
+A formal note for the mentor has been added at:
 
 ```text
-scripts/step_04_scrape_quotes_to_csv.py
+resubmission/NOTE_TO_MENTOR.txt
 ```
 
-The script fetches the first page of `https://quotes.toscrape.com/`, parses the HTML with BeautifulSoup, and extracts structured quote data.
+This note explains that the first submission was based on the broad assignment document, while the resubmission is being prepared according to the mentor's specific feedback.
 
-For each quote block, the script extracts:
+## Resubmission progress checklist
 
-- Quote text.
-- Author name.
-- Tags.
-
-The extracted data is stored in a pandas DataFrame and exported to:
-
-```text
-data/quotes_page_1.csv
-```
-
-The script was executed successfully and scraped `10` quotes from page 1. The terminal output also verified that the CSV file was created and displayed the first few CSV rows.
-
-Screenshot proofs:
-
-- `screenshot_proofs/step_04_scrape_quotes_to_csv/step_04_a_scrape_quotes_to_csv_script_code.png`
-- `screenshot_proofs/step_04_scrape_quotes_to_csv/step_04_b_terminal_output_csv_created_and_preview.png`
-
-## Step 5 - Scrape multiple pages using pagination
-
-A new script was created at:
-
-```text
-scripts/step_05_pagination_scraping.py
-```
-
-The script starts from page 1 of `https://quotes.toscrape.com/` and follows the `Next` pagination link until no next page is available.
-
-For each page, the script extracts:
-
-- Quote text.
-- Author name.
-- Tags.
-- Page number.
-
-The extracted data from all pages is stored in a pandas DataFrame and exported to:
-
-```text
-data/all_quotes.csv
-```
-
-The script was executed successfully and scraped all `10` pages. The final output confirmed:
-
-```text
-Total quotes scraped: 100
-Total pages scraped: 10
-CSV file saved at: data/all_quotes.csv
-```
-
-Screenshot proofs:
-
-- `screenshot_proofs/step_05_pagination_scraping/step_05_a_pagination_scraping_script_code_top.png`
-- `screenshot_proofs/step_05_pagination_scraping/step_05_b_pagination_scraping_script_code_bottom.png`
-- `screenshot_proofs/step_05_pagination_scraping/step_05_c_pagination_terminal_output_and_csv_creation.png`
-- `screenshot_proofs/step_05_pagination_scraping/step_05_d_all_quotes_csv_preview_part_1.png`
-- `screenshot_proofs/step_05_pagination_scraping/step_05_e_all_quotes_csv_preview_part_2.png`
-- `screenshot_proofs/step_05_pagination_scraping/step_05_f_all_quotes_csv_preview_part_3.png`
-
-## Step 6 - Final testing and verification
-
-All scripts were run again from the assignment folder to verify the full project workflow:
-
-```powershell
-python ".\scripts\step_01_test_setup.py"
-python ".\scripts\step_02_fetch_webpage.py"
-python ".\scripts\step_03_parse_html.py"
-python ".\scripts\step_04_scrape_quotes_to_csv.py"
-python ".\scripts\step_05_pagination_scraping.py"
-```
-
-Final testing verified:
-
-- All scripts execute successfully.
-- `quotes_page_1.csv` is generated.
-- `all_quotes.csv` is generated.
-- `quotes_page_1.csv` contains `11` rows including header.
-- `all_quotes.csv` contains `101` rows including header.
-- Final project folders are present: `data`, `scripts`, and `screenshot_proofs`.
-
-Screenshot proofs:
-
-- `screenshot_proofs/step_06_final_testing/step_06_a_all_scripts_final_run_terminal_start.png`
-- `screenshot_proofs/step_06_final_testing/step_06_b_all_scripts_final_run_terminal_completed.png`
-- `screenshot_proofs/step_06_final_testing/step_06_c_data_files_csv_preview_and_row_counts.png`
-- `screenshot_proofs/step_06_final_testing/step_06_d_final_project_structure_scripts_data_screenshots.png`
-
-## Screenshot proof folders
-
-```text
-step_01_project_setup/
-step_02_fetch_webpage/
-step_03_parse_html/
-step_04_scrape_quotes_to_csv/
-step_05_pagination_scraping/
-step_06_final_testing/
-```
-
-## Progress checklist
-
-- [x] Step 1: Project setup and dependency test
-- [x] Step 2: Fetch webpage using requests
-- [x] Step 3: Parse HTML using BeautifulSoup
-- [x] Step 4: Scrape quote data and save to CSV
-- [x] Step 5: Scrape multiple pages using pagination
-- [x] Step 6: Final testing and screenshots
-- [ ] Step 7: Final packaging
+- [x] Step R0: Preserve original submission and create resubmission folder
+- [x] Step R0: Add formal note for mentor
+- [x] Step R0: Add beginner-level requirements file
+- [ ] Step R1: Create Amazon price checker script
+- [ ] Step R2: Test price extraction and price comparison
+- [ ] Step R3: Add screenshots and final README updates
+- [ ] Step R4: Create final resubmission ZIP
