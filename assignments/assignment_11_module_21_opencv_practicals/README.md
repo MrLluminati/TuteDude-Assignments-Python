@@ -64,6 +64,12 @@ Practical covered:
 
 Screenshot proofs: `screenshot_proofs/step_05_draw_shapes_text/`
 
+### Step 06 - Final testing
+
+All practical scripts were executed again successfully in sequence.
+
+Final testing screenshot proofs: `screenshot_proofs/step_06_final_testing/`
+
 ## Requirements
 
 Install dependencies:
@@ -86,4 +92,5 @@ numpy
 - [x] Step 03: Convert image to grayscale
 - [x] Step 04: Resize and crop image
 - [x] Step 05: Drawing practical
-- [ ] Step 06: Final testing and ZIP submission
+- [x] Step 06: Final testing
+- [ ] Step 07: Final submission ZIP
