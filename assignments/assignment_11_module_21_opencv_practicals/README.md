@@ -13,14 +13,17 @@ assignment_11_module_21_opencv_practicals/
 │   └── sample_input_image.png
 ├── output_images/
 │   ├── step_01_opencv_setup_test.png
-│   └── step_02_read_image_output.png
+│   ├── step_02_read_image_output.png
+│   └── step_03_grayscale_image.png
 ├── requirements.txt
 ├── screenshot_proofs/
 │   ├── step_01_project_setup/
-│   └── step_02_read_image/
+│   ├── step_02_read_image/
+│   └── step_03_grayscale_image/
 └── scripts/
     ├── step_01_test_opencv_setup.py
-    └── step_02_read_image.py
+    ├── step_02_read_image.py
+    └── step_03_grayscale_image.py
 ```
 
 ## Requirements
@@ -101,6 +104,40 @@ Screenshot proofs:
 screenshot_proofs/step_02_read_image/
 ```
 
+## Step 03 - Convert image to grayscale
+
+Script:
+
+```text
+scripts/step_03_grayscale_image.py
+```
+
+Purpose:
+
+- read the existing sample input image;
+- print original image shape and data type;
+- convert the image from BGR to grayscale using cv2.cvtColor();
+- print grayscale image shape and data type;
+- save the grayscale image using cv2.imwrite().
+
+Input image:
+
+```text
+input_images/sample_input_image.png
+```
+
+Output image:
+
+```text
+output_images/step_03_grayscale_image.png
+```
+
+Screenshot proofs:
+
+```text
+screenshot_proofs/step_03_grayscale_image/
+```
+
 ## Progress checklist
 
 - [x] Step 01: Project folder structure created
@@ -114,7 +151,10 @@ screenshot_proofs/step_02_read_image/
 - [x] Step 02: Image read using OpenCV
 - [x] Step 02: Output image saved
 - [x] Step 02: Screenshot proofs added
-- [ ] Step 03: Grayscale image practical
+- [x] Step 03: Grayscale image script created
+- [x] Step 03: Image converted to grayscale
+- [x] Step 03: Grayscale output image saved
+- [x] Step 03: Screenshot proofs added
 - [ ] Step 04: Resize/crop practical
 - [ ] Step 05: Drawing practical
 - [ ] Step 06: Final testing and ZIP submission
