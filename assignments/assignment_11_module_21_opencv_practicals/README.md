@@ -47,6 +47,23 @@ Output images:
 
 Screenshot proofs: `screenshot_proofs/step_04_resize_crop_image/`
 
+### Step 05 - Draw shapes and text
+
+Script: `scripts/step_05_draw_shapes_text.py`
+
+Output image: `output_images/step_05_draw_shapes_text.png`
+
+Practical covered:
+
+- creating a blank image using NumPy;
+- drawing a line using OpenCV;
+- drawing a rectangle using OpenCV;
+- drawing a circle using OpenCV;
+- writing text using OpenCV;
+- saving the final drawing output image.
+
+Screenshot proofs: `screenshot_proofs/step_05_draw_shapes_text/`
+
 ## Requirements
 
 Install dependencies:
@@ -68,5 +85,5 @@ numpy
 - [x] Step 02: Read and save image
 - [x] Step 03: Convert image to grayscale
 - [x] Step 04: Resize and crop image
-- [ ] Step 05: Drawing practical
+- [x] Step 05: Drawing practical
 - [ ] Step 06: Final testing and ZIP submission
