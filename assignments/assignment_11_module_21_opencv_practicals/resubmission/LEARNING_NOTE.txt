@@ -1,0 +1,18 @@
+Assignment 11 Resubmission - OpenCV Practicals
+
+This is my resubmission for the OpenCV practical assignment.
+
+In the earlier submission, I completed basic image operations like reading, resizing, cropping, grayscale conversion, and drawing. After the mentor feedback, I understood that I also needed to include the missing OpenCV practicals such as video processing, webcam capture, image rotation, thresholding, and transformation operations.
+
+In this resubmission, I am reworking the assignment step by step in a simpler beginner-level manner. I will include code, output files, terminal output, and screenshot proofs for each practical.
+
+The practicals covered in this resubmission are:
+
+1. Read image
+2. Resize and crop image
+3. Rotate image
+4. Apply thresholding
+5. Apply affine transformation
+6. Video processing using cv2.VideoCapture and cv2.VideoWriter
+7. Webcam capture practical
+8. Final testing
