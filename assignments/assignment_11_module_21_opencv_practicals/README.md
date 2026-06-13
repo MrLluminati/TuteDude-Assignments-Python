@@ -4,27 +4,48 @@ This project contains beginner-level OpenCV practical implementations for Assign
 
 The work is organised with scripts, generated output images, and screenshot proofs showing code, terminal output, output files, and system timestamp where applicable.
 
-## Folder structure
+## Completed practicals
 
-```text
-assignment_11_module_21_opencv_practicals/
-├── README.md
-├── input_images/
-│   └── sample_input_image.png
-├── output_images/
-│   ├── step_01_opencv_setup_test.png
-│   ├── step_02_read_image_output.png
-│   └── step_03_grayscale_image.png
-├── requirements.txt
-├── screenshot_proofs/
-│   ├── step_01_project_setup/
-│   ├── step_02_read_image/
-│   └── step_03_grayscale_image/
-└── scripts/
-    ├── step_01_test_opencv_setup.py
-    ├── step_02_read_image.py
-    └── step_03_grayscale_image.py
-```
+### Step 01 - OpenCV setup test
+
+Script: `scripts/step_01_test_opencv_setup.py`
+
+Output image: `output_images/step_01_opencv_setup_test.png`
+
+Screenshot proofs: `screenshot_proofs/step_01_project_setup/`
+
+### Step 02 - Read and save image
+
+Script: `scripts/step_02_read_image.py`
+
+Input image: `input_images/sample_input_image.png`
+
+Output image: `output_images/step_02_read_image_output.png`
+
+Screenshot proofs: `screenshot_proofs/step_02_read_image/`
+
+### Step 03 - Convert image to grayscale
+
+Script: `scripts/step_03_grayscale_image.py`
+
+Input image: `input_images/sample_input_image.png`
+
+Output image: `output_images/step_03_grayscale_image.png`
+
+Screenshot proofs: `screenshot_proofs/step_03_grayscale_image/`
+
+### Step 04 - Resize and crop image
+
+Script: `scripts/step_04_resize_crop_image.py`
+
+Input image: `input_images/sample_input_image.png`
+
+Output images:
+
+- `output_images/step_04_resized_image.png`
+- `output_images/step_04_cropped_image.png`
+
+Screenshot proofs: `screenshot_proofs/step_04_resize_crop_image/`
 
 ## Requirements
 
@@ -41,120 +62,11 @@ opencv-python
 numpy
 ```
 
-## Step 01 - OpenCV setup test
-
-Script:
-
-```text
-scripts/step_01_test_opencv_setup.py
-```
-
-Purpose:
-
-- import OpenCV and NumPy;
-- print package versions;
-- print system timestamp;
-- create a blank image using NumPy;
-- draw a rectangle, circle, and text using OpenCV;
-- save the generated output image.
-
-Output image:
-
-```text
-output_images/step_01_opencv_setup_test.png
-```
-
-Screenshot proofs:
-
-```text
-screenshot_proofs/step_01_project_setup/
-```
-
-## Step 02 - Read and save image
-
-Script:
-
-```text
-scripts/step_02_read_image.py
-```
-
-Purpose:
-
-- create a sample input image if it is not already available;
-- read the image using cv2.imread();
-- print the image path, shape, and data type;
-- save the read image using cv2.imwrite();
-- confirm the generated output image.
-
-Input image:
-
-```text
-input_images/sample_input_image.png
-```
-
-Output image:
-
-```text
-output_images/step_02_read_image_output.png
-```
-
-Screenshot proofs:
-
-```text
-screenshot_proofs/step_02_read_image/
-```
-
-## Step 03 - Convert image to grayscale
-
-Script:
-
-```text
-scripts/step_03_grayscale_image.py
-```
-
-Purpose:
-
-- read the existing sample input image;
-- print original image shape and data type;
-- convert the image from BGR to grayscale using cv2.cvtColor();
-- print grayscale image shape and data type;
-- save the grayscale image using cv2.imwrite().
-
-Input image:
-
-```text
-input_images/sample_input_image.png
-```
-
-Output image:
-
-```text
-output_images/step_03_grayscale_image.png
-```
-
-Screenshot proofs:
-
-```text
-screenshot_proofs/step_03_grayscale_image/
-```
-
 ## Progress checklist
 
-- [x] Step 01: Project folder structure created
-- [x] Step 01: Requirements file added
-- [x] Step 01: OpenCV and NumPy installed
-- [x] Step 01: Setup test script created
-- [x] Step 01: Output image generated
-- [x] Step 01: Screenshot proofs added
-- [x] Step 02: Image reading script created
-- [x] Step 02: Input image generated
-- [x] Step 02: Image read using OpenCV
-- [x] Step 02: Output image saved
-- [x] Step 02: Screenshot proofs added
-- [x] Step 03: Grayscale image script created
-- [x] Step 03: Image converted to grayscale
-- [x] Step 03: Grayscale output image saved
-- [x] Step 03: Screenshot proofs added
-- [ ] Step 04: Resize/crop practical
+- [x] Step 01: Project setup and OpenCV test
+- [x] Step 02: Read and save image
+- [x] Step 03: Convert image to grayscale
+- [x] Step 04: Resize and crop image
 - [ ] Step 05: Drawing practical
 - [ ] Step 06: Final testing and ZIP submission
