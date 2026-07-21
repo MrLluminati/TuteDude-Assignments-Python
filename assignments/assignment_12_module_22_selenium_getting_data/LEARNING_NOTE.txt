@@ -1,0 +1,14 @@
+Assignment 12 - Automation using Selenium
+
+In this assignment, I will practise browser automation using Selenium.
+
+The programs will cover:
+1. Opening websites in Chrome
+2. Maximizing the browser window
+3. Finding elements using different locators
+4. Entering search text
+5. Clicking links and buttons
+6. Refreshing web pages
+7. Extracting data from multiple elements
+8. Printing data in the terminal
+9. Closing the browser
