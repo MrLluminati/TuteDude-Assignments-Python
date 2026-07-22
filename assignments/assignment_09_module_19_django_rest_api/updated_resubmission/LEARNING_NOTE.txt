@@ -1,0 +1,16 @@
+Assignment 9 - Updated Django REST API
+
+This version follows the revised assignment requirements.
+
+The project will include:
+
+1. A Blog Post model
+2. Django user authentication
+3. Create, read, update and delete operations
+4. Access limited to the logged-in user's own posts
+5. Custom object permission
+6. Filtering by creation date
+7. Searching by title and content
+8. Ordering by post ID
+9. Pagination with five posts per page
+10. Session and token authentication
